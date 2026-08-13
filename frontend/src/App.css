@@ -1,0 +1,614 @@
+/* ==========================================================
+   APP.CSS
+   Premium Enterprise Black + Gold Theme
+   Senior Java Developer Portfolio
+========================================================== */
+
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   HTML
+========================================================== */
+
+html {
+  scroll-behavior: smooth;
+  background: #080808;
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  background: #080808;
+  color: #e5e5e5;
+
+  line-height: 1.7;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080808;
+}
+
+/* ==========================================================
+   GLOBAL ELEMENTS
+========================================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* ==========================================================
+   THEME CONTAINERS
+========================================================== */
+
+.light-theme,
+.dark-theme {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080808;
+  color: #e5e5e5;
+}
+
+/* ==========================================================
+   MAIN PORTFOLIO CONTAINER
+========================================================== */
+
+.profile-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 118px 34px 60px;
+
+  background: #080808;
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+section {
+  width: 100%;
+
+  margin-top: 55px;
+
+  scroll-margin-top: 120px;
+}
+
+/* ==========================================================
+   COMMON SECTION CARDS
+========================================================== */
+
+.about-section,
+.skills,
+.experience-section,
+.projects-section,
+.certifications-section,
+.education-section,
+.contact-section {
+  width: 100%;
+
+  background: linear-gradient(145deg, #171717 0%, #111111 55%, #0d0d0d 100%);
+
+  border: 1px solid rgba(245, 184, 0, 0.14);
+
+  border-radius: 18px;
+
+  padding: 42px;
+
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ==========================================================
+   CARD HOVER
+========================================================== */
+
+.about-section:hover,
+.skills:hover,
+.experience-section:hover,
+.projects-section:hover,
+.certifications-section:hover,
+.education-section:hover,
+.contact-section:hover {
+  border-color: rgba(245, 184, 0, 0.3);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(245, 184, 0, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* ==========================================================
+   COMMON SECTION HEADINGS
+========================================================== */
+
+.section-title,
+.about-section h2,
+.skills h2,
+.experience-section h2,
+.projects-section h2,
+.certifications-section h2,
+.education-section h2,
+.contact-section h2 {
+  text-align: center;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  color: #f5b800;
+
+  margin-bottom: 38px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  position: relative;
+}
+
+/* ==========================================================
+   SECTION HEADING GOLD LINE
+========================================================== */
+
+.section-title::after,
+.about-section h2::after,
+.skills h2::after,
+.experience-section h2::after,
+.projects-section h2::after,
+.certifications-section h2::after,
+.education-section h2::after,
+.contact-section h2::after {
+  content: "";
+
+  display: block;
+
+  width: 54px;
+
+  height: 2px;
+
+  margin: 14px auto 0;
+
+  background: linear-gradient(90deg, #c78d00, #f5b800, #ffd45a);
+
+  border-radius: 2px;
+
+  box-shadow: 0 0 8px rgba(245, 184, 0, 0.2);
+}
+
+/* ==========================================================
+   GENERAL TEXT
+========================================================== */
+
+.profile-container p {
+  color: #b7b7b7;
+}
+
+/* ==========================================================
+   STRONG TEXT
+========================================================== */
+
+.profile-container strong {
+  color: #f5d66a;
+}
+
+/* ==========================================================
+   GOLD HIGHLIGHT
+========================================================== */
+
+.gold-text {
+  color: #f5b800;
+}
+
+/* ==========================================================
+   TECHNICAL / CODE ELEMENTS
+========================================================== */
+
+code {
+  font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
+
+  color: #f5d66a;
+
+  background: linear-gradient(135deg, #1a1a1a, #111111);
+
+  border: 1px solid #303030;
+
+  border-radius: 6px;
+
+  padding: 4px 8px;
+}
+
+/* ==========================================================
+   LOADING SCREEN
+========================================================== */
+
+.loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  background: #080808;
+
+  color: #f5b800;
+}
+
+/* ==========================================================
+   LOADING TEXT
+========================================================== */
+
+.loading p {
+  color: #a7a7a7;
+
+  font-size: 15px;
+
+  letter-spacing: 0.2px;
+}
+
+/* ==========================================================
+   LOADER
+========================================================== */
+
+.loader {
+  width: 54px;
+  height: 54px;
+
+  border: 4px solid #292929;
+
+  border-top: 4px solid #f5b800;
+
+  border-right: 4px solid #f5b800;
+
+  border-radius: 50%;
+
+  animation: spin 0.9s linear infinite;
+
+  box-shadow: 0 0 16px rgba(245, 184, 0, 0.08);
+}
+
+/* ==========================================================
+   SPIN
+========================================================== */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR SCREEN
+========================================================== */
+
+.error-box {
+  max-width: 520px;
+
+  margin: 140px auto;
+
+  padding: 42px;
+
+  text-align: center;
+
+  background: linear-gradient(145deg, #171717, #0e0e0e);
+
+  border: 1px solid rgba(245, 184, 0, 0.18);
+
+  border-radius: 18px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================
+   ERROR HEADING
+========================================================== */
+
+.error-box h2 {
+  color: #f5b800;
+
+  margin-bottom: 15px;
+}
+
+/* ==========================================================
+   ERROR TEXT
+========================================================== */
+
+.error-box p {
+  color: #a7a7a7;
+
+  margin-bottom: 25px;
+}
+
+/* ==========================================================
+   ERROR BUTTON
+========================================================== */
+
+.error-box button {
+  border: 1px solid #f5b800;
+
+  background: linear-gradient(135deg, #ffd45a, #f5b800);
+
+  color: #0b0b0b;
+
+  padding: 11px 25px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================================
+   ERROR BUTTON HOVER
+========================================================== */
+
+.error-box button:hover {
+  background: linear-gradient(135deg, #ffe078, #ffc928);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(245, 184, 0, 0.18);
+}
+
+/* ==========================================================
+   SCROLL REVEAL
+========================================================== */
+
+.animate {
+  width: 100%;
+
+  display: block;
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* ==========================================================
+   SCROLL REVEAL ACTIVE
+========================================================== */
+
+.animate.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* ==========================================================
+   SCROLLBAR TRACK
+========================================================== */
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+/* ==========================================================
+   SCROLLBAR THUMB
+========================================================== */
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #51461f, #332f24);
+
+  border-radius: 20px;
+
+  border: 2px solid #080808;
+}
+
+/* ==========================================================
+   SCROLLBAR HOVER
+========================================================== */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f5b800;
+}
+
+/* ==========================================================
+   TEXT SELECTION
+========================================================== */
+
+::selection {
+  background: #f5b800;
+
+  color: #080808;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+  .profile-container {
+    padding: 112px 24px 50px;
+  }
+
+  section {
+    margin-top: 45px;
+  }
+
+  .about-section,
+  .skills,
+  .experience-section,
+  .projects-section,
+  .certifications-section,
+  .education-section,
+  .contact-section {
+    padding: 34px;
+  }
+
+  .section-title,
+  .about-section h2,
+  .skills h2,
+  .experience-section h2,
+  .projects-section h2,
+  .certifications-section h2,
+  .education-section h2,
+  .contact-section h2 {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 100px 16px 40px;
+  }
+
+  section {
+    margin-top: 35px;
+  }
+
+  .about-section,
+  .skills,
+  .experience-section,
+  .projects-section,
+  .certifications-section,
+  .education-section,
+  .contact-section {
+    padding: 26px 22px;
+
+    border-radius: 15px;
+  }
+
+  .section-title,
+  .about-section h2,
+  .skills h2,
+  .experience-section h2,
+  .projects-section h2,
+  .certifications-section h2,
+  .education-section h2,
+  .contact-section h2 {
+    font-size: 27px;
+
+    margin-bottom: 30px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 90px 12px 30px;
+  }
+
+  .about-section,
+  .skills,
+  .experience-section,
+  .projects-section,
+  .certifications-section,
+  .education-section,
+  .contact-section {
+    padding: 22px 17px;
+
+    border-radius: 13px;
+  }
+
+  .section-title,
+  .about-section h2,
+  .skills h2,
+  .experience-section h2,
+  .projects-section h2,
+  .certifications-section h2,
+  .education-section h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+}

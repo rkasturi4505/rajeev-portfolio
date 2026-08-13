@@ -1,0 +1,10 @@
+package com.rajeev.backend.repository;
+
+import com.rajeev.backend.entity.ProjectEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface ProjectRepository
+        extends JpaRepository<ProjectEntity, Long> {
+
+}

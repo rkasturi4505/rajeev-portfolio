@@ -1,0 +1,854 @@
+/* ==========================================================
+   NAVBAR
+   Premium Enterprise Black + Gold
+   Integrated Public Portfolio Header
+   ========================================================== */
+
+/* ==========================================================
+   MAIN NAVBAR
+   ========================================================== */
+
+.navbar {
+  width: 100%;
+  height: 72px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: transparent;
+
+  border: none;
+  border-bottom: none;
+
+  box-shadow: none;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ==========================================================
+   SCROLLED NAVBAR
+   ========================================================== */
+
+.navbar-scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 10, 14, 0.98),
+    rgba(7, 10, 14, 0.96)
+  );
+
+  border: none;
+  border-bottom: none;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* ==========================================================
+   BRAND
+   ========================================================== */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 220px;
+  min-width: 220px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   BRAND LOGO
+   ========================================================== */
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #ffd45a 0%, #d4af37 48%, #b8860b 100%);
+
+  color: #090d12;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  border: 1px solid rgba(255, 215, 90, 0.55);
+
+  box-shadow:
+    0 6px 16px rgba(212, 175, 55, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ==========================================================
+   BRAND LOGO HOVER
+   ========================================================== */
+
+.navbar-brand:hover .brand-logo {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(212, 175, 55, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================
+   BRAND CONTENT
+   ========================================================== */
+
+.brand-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+/* ==========================================================
+   BRAND NAME
+   ========================================================== */
+
+.brand-content h2 {
+  margin: 0;
+  padding: 0;
+
+  color: #f8fafc;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.2px;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   BRAND ROLE
+   ========================================================== */
+
+.brand-content span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  letter-spacing: 0.15px;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.navbar-links {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  margin: 0;
+  padding: 0 10px;
+
+  list-style: none;
+
+  min-width: 0;
+}
+
+/* ==========================================================
+   NAVIGATION LINKS
+   ========================================================== */
+
+.navbar-links a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 0;
+
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1px;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ==========================================================
+   NAVIGATION HOVER
+   ========================================================== */
+
+.navbar-links a:hover {
+  color: #d4af37;
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   ACTIVE LINK
+   ========================================================== */
+
+.navbar-links a.active {
+  color: #d4af37;
+}
+
+/* ==========================================================
+   ACTIVE / HOVER LINE
+   ========================================================== */
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 2px;
+
+  background: linear-gradient(90deg, #b8860b, #d4af37, #ffd45a);
+
+  transform: translateX(-50%);
+
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.35);
+
+  transition: width 0.22s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* ==========================================================
+   NAVBAR ACTIONS
+   ========================================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  width: 150px;
+  min-width: 150px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   AI ASSISTANT
+   ========================================================== */
+
+.ai-button {
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #ffd45a, #d4af37);
+
+  color: #090d12;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-shadow:
+    0 5px 14px rgba(212, 175, 55, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================================
+   AI ICON
+   ========================================================== */
+
+.ai-button svg {
+  width: 13px;
+  height: 13px;
+
+  flex-shrink: 0;
+
+  color: #090d12;
+}
+
+/* ==========================================================
+   AI HOVER
+   ========================================================== */
+
+.ai-button:hover {
+  background: linear-gradient(135deg, #ffe078, #e4c35a);
+
+  border-color: #ffd45a;
+
+  color: #090d12;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(212, 175, 55, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================
+   AI ACTIVE
+   ========================================================== */
+
+.ai-button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.12);
+}
+
+/* ==========================================================
+   THEME TOGGLE
+   ========================================================== */
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #333b45;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #1d242c, #141a20);
+
+  color: #d7d7d7;
+
+  font-size: 14px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================================
+   THEME ICON
+   ========================================================== */
+
+.theme-toggle svg {
+  width: 14px;
+  height: 14px;
+
+  color: #d7d7d7;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ==========================================================
+   THEME HOVER
+   ========================================================== */
+
+.theme-toggle:hover {
+  background: #202830;
+
+  border-color: rgba(212, 175, 55, 0.65);
+
+  color: #d4af37;
+
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+}
+
+.theme-toggle:hover svg {
+  color: #d4af37;
+
+  transform: rotate(12deg);
+}
+
+/* ==========================================================
+   MOBILE MENU
+   ========================================================== */
+
+.mobile-menu-btn {
+  display: none;
+
+  width: 38px;
+  height: 38px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #333b45;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #1d242c, #141a20);
+
+  color: #d7d7d7;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================================
+   MOBILE MENU ICON
+   ========================================================== */
+
+.mobile-menu-btn svg {
+  width: 15px;
+  height: 15px;
+
+  color: #d7d7d7;
+}
+
+/* ==========================================================
+   MOBILE MENU HOVER
+   ========================================================== */
+
+.mobile-menu-btn:hover {
+  background: #202830;
+
+  border-color: rgba(212, 175, 55, 0.65);
+
+  color: #d4af37;
+
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.08);
+}
+
+.mobile-menu-btn:hover svg {
+  color: #d4af37;
+}
+
+/* ==========================================================
+   BUTTON FOCUS
+   ========================================================== */
+
+.ai-button:focus-visible,
+.theme-toggle:focus-visible,
+.mobile-menu-btn:focus-visible {
+  outline: 2px solid #d4af37;
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar-brand {
+    width: 195px;
+    min-width: 195px;
+  }
+
+  .navbar-links {
+    gap: 17px;
+    padding: 0 6px;
+  }
+
+  .navbar-links a {
+    font-size: 11px;
+  }
+
+  .navbar-actions {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .ai-button {
+    padding: 0 10px;
+  }
+}
+
+/* ==========================================================
+   SMALL LAPTOP / TABLET
+   ========================================================== */
+
+@media (max-width: 1050px) {
+  .navbar {
+    height: 68px;
+  }
+
+  .navbar-brand {
+    width: 175px;
+    min-width: 175px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+  }
+
+  .brand-content h2 {
+    font-size: 14px;
+  }
+
+  .brand-content span {
+    font-size: 9px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 10px;
+  }
+
+  .navbar-actions {
+    width: 125px;
+    min-width: 125px;
+
+    gap: 6px;
+  }
+
+  .ai-button {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 850px) {
+  .navbar {
+    width: 100%;
+
+    height: 62px;
+
+    position: sticky;
+    top: 0;
+
+    left: auto;
+    right: auto;
+
+    padding: 0 4%;
+
+    border-radius: 0;
+
+    border: none;
+    border-bottom: none;
+  }
+
+  .navbar-scrolled {
+    border: none;
+    border-bottom: none;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .navbar-brand {
+    width: auto;
+    min-width: 0;
+
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+  }
+
+  .brand-content h2 {
+    font-size: 13px;
+  }
+
+  .brand-content span {
+    font-size: 9px;
+  }
+
+  /* ========================================================
+     MOBILE NAVIGATION
+     ======================================================== */
+
+  .navbar-links {
+    position: absolute;
+
+    top: 100%;
+
+    left: 4%;
+    right: 4%;
+
+    width: auto;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 3px;
+
+    padding: 10px;
+
+    background: linear-gradient(145deg, #151b22, #0d1218);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    border-radius: 10px;
+
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    padding: 11px 12px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+  }
+
+  .navbar-links a:hover {
+    background: rgba(212, 175, 55, 0.07);
+
+    transform: none;
+  }
+
+  .navbar-links a::after {
+    display: none;
+  }
+
+  .navbar-links a.active {
+    background: rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+
+    box-shadow: inset 2px 0 0 #d4af37;
+  }
+
+  /* ========================================================
+     ACTIONS
+     ======================================================== */
+
+  .navbar-actions {
+    width: auto;
+    min-width: auto;
+
+    gap: 6px;
+
+    margin-left: auto;
+  }
+
+  .ai-button {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border-radius: 8px;
+  }
+
+  .ai-button span {
+    display: none;
+  }
+
+  .theme-toggle,
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 3%;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+
+    font-size: 14px;
+  }
+
+  .brand-content h2 {
+    font-size: 12px;
+  }
+
+  .brand-content span {
+    display: none;
+  }
+
+  .ai-button,
+  .theme-toggle,
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar-links {
+    left: 3%;
+    right: 3%;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    transition: none !important;
+  }
+}

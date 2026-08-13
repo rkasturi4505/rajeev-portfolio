@@ -1,0 +1,790 @@
+/* ==========================================================
+   VISITOR SESSION MANAGEMENT
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+.visitor-session-management {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 0 20px;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.visitor-session-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin: 0;
+}
+
+.visitor-session-management .management-header h2 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f8fafc;
+}
+
+.visitor-session-management .management-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   REFRESH BUTTON
+========================================================== */
+
+.visitor-session-management .refresh-btn {
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+
+  padding: 11px 20px;
+
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+
+  color: #090d12;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.14);
+}
+
+.visitor-session-management .refresh-btn:hover {
+  background: linear-gradient(135deg, #e4c35a, #c99716);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.24);
+}
+
+.visitor-session-management .refresh-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   SUMMARY SECTION
+========================================================== */
+
+.visitor-session-management .session-summary {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+  gap: 18px;
+}
+
+/* ==========================================================
+   SUMMARY CARD
+========================================================== */
+
+.visitor-session-management .session-summary-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-height: 105px;
+
+  padding: 20px;
+
+  background: linear-gradient(145deg, #111827 0%, #0b0f14 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.visitor-session-management .session-summary-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.36);
+}
+
+/* ==========================================================
+   SUMMARY ICON
+========================================================== */
+
+.visitor-session-management .summary-icon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(212, 175, 55, 0.1);
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+
+  color: #d4af37;
+
+  font-size: 24px;
+}
+
+/* ==========================================================
+   SUMMARY TEXT
+========================================================== */
+
+.visitor-session-management .session-summary-card h3 {
+  margin: 0 0 5px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.visitor-session-management .session-summary-card strong {
+  display: block;
+
+  color: #f8fafc;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+/* ==========================================================
+   MAIN TABLE CARD
+========================================================== */
+
+.visitor-session-management .session-table-card {
+  width: 100%;
+
+  background: linear-gradient(145deg, #111827 0%, #0b0f14 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.visitor-session-management .table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.visitor-session-management .table-header h3 {
+  margin: 0 0 6px;
+
+  color: #f8fafc;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.visitor-session-management .table-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.visitor-session-management .session-search {
+  width: 280px;
+
+  height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid #334155;
+
+  border-radius: 9px;
+
+  background: #090d12;
+
+  color: #f8fafc;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.visitor-session-management .session-search::placeholder {
+  color: #64748b;
+}
+
+.visitor-session-management .session-search:hover {
+  border-color: #64748b;
+}
+
+.visitor-session-management .session-search:focus {
+  border-color: #d4af37;
+
+  background: #0d1218;
+
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.visitor-session-management .session-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  border-radius: 12px;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.visitor-session-management .session-table {
+  width: max-content;
+
+  min-width: 1000px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.visitor-session-management .session-table thead {
+  background: #090d12;
+}
+
+.visitor-session-management .session-table th {
+  padding: 15px 18px;
+
+  color: #d4af37;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.visitor-session-management .session-table td {
+  padding: 16px 18px;
+
+  color: #cbd5e1;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.visitor-session-management .session-table tbody tr {
+  background: #111827;
+
+  transition: background-color 0.2s ease;
+}
+
+.visitor-session-management .session-table tbody tr:nth-child(even) {
+  background: #0f151d;
+}
+
+.visitor-session-management .session-table tbody tr:hover {
+  background: rgba(212, 175, 55, 0.055);
+}
+
+/* ==========================================================
+   IP ADDRESS
+========================================================== */
+
+.visitor-session-management .session-ip {
+  color: #d4af37;
+
+  font-family: "Consolas", "Courier New", monospace;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* ==========================================================
+   LOCATION
+========================================================== */
+
+.visitor-session-management .session-location {
+  color: #e2e8f0;
+
+  font-weight: 500;
+}
+
+/* ==========================================================
+   DEVICE / BROWSER
+========================================================== */
+
+.visitor-session-management .session-device {
+  color: #cbd5e1;
+}
+
+.visitor-session-management .session-browser {
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   DATE
+========================================================== */
+
+.visitor-session-management .session-date {
+  color: #d4af37;
+
+  font-weight: 500;
+}
+
+/* ==========================================================
+   STATUS BADGES
+========================================================== */
+
+.visitor-session-management .session-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  border: 1px solid transparent;
+}
+
+.visitor-session-management .session-status.active {
+  color: #86efac;
+
+  background: rgba(34, 197, 94, 0.1);
+
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.visitor-session-management .session-status.inactive {
+  color: #94a3b8;
+
+  background: rgba(148, 163, 184, 0.08);
+
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.visitor-session-management .empty-state {
+  text-align: center;
+
+  padding: 65px 30px !important;
+
+  background: #111827;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+.visitor-session-management .empty-state h3 {
+  margin: 0 0 8px;
+
+  color: #cbd5e1;
+
+  font-size: 18px;
+}
+
+.visitor-session-management .empty-state p {
+  margin: 0;
+
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.visitor-session-management .loading-container {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 260px;
+
+  padding: 50px;
+
+  background: linear-gradient(145deg, #111827, #0b0f14);
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+
+  border-radius: 18px;
+}
+
+.visitor-session-management .loader {
+  width: 42px;
+
+  height: 42px;
+
+  border: 4px solid #27303b;
+
+  border-top-color: #d4af37;
+
+  border-radius: 50%;
+
+  animation: visitorSessionSpin 0.8s linear infinite;
+}
+
+.visitor-session-management .loading-container p {
+  margin-top: 16px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+@keyframes visitorSessionSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.visitor-session-management .error-container {
+  padding: 35px;
+
+  text-align: center;
+
+  background: linear-gradient(145deg, #1a1012, #120b0d);
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.visitor-session-management .error-container h3 {
+  margin: 0 0 8px;
+
+  color: #f87171;
+
+  font-size: 17px;
+}
+
+.visitor-session-management .error-container p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.visitor-session-management .session-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+
+  height: 8px;
+}
+
+.visitor-session-management .session-table-wrapper::-webkit-scrollbar-track {
+  background: #090d12;
+
+  border-radius: 999px;
+}
+
+.visitor-session-management .session-table-wrapper::-webkit-scrollbar-thumb {
+  background: #475569;
+
+  border-radius: 999px;
+}
+
+.visitor-session-management
+  .session-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.visitor-session-management button:focus-visible,
+.visitor-session-management input:focus-visible {
+  outline: 2px solid #d4af37;
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   GLOBAL BOX SIZING
+========================================================== */
+
+.visitor-session-management *,
+.visitor-session-management *::before,
+.visitor-session-management *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+.visitor-session-management *,
+.visitor-session-management *::before,
+.visitor-session-management *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==========================================================
+   RESPONSIVE — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .visitor-session-management .session-summary {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+
+  .visitor-session-management .table-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .visitor-session-management .session-search {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .visitor-session-management {
+    gap: 20px;
+  }
+
+  .visitor-session-management .management-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .visitor-session-management .management-header h2 {
+    font-size: 28px;
+  }
+
+  .visitor-session-management .refresh-btn {
+    width: 100%;
+  }
+
+  .visitor-session-management .session-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .visitor-session-management .session-table-card {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .visitor-session-management .session-table th,
+  .visitor-session-management .session-table td {
+    padding: 14px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .visitor-session-management .management-header h2 {
+    font-size: 25px;
+  }
+
+  .visitor-session-management .management-header p {
+    font-size: 14px;
+  }
+
+  .visitor-session-management .session-summary-card {
+    padding: 18px;
+  }
+
+  .visitor-session-management .session-summary-card strong {
+    font-size: 24px;
+  }
+
+  .visitor-session-management .summary-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 21px;
+  }
+
+  .visitor-session-management .session-table-card {
+    padding: 15px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .visitor-session-management *,
+  .visitor-session-management *::before,
+  .visitor-session-management *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .visitor-session-management {
+    color: #111827;
+  }
+
+  .visitor-session-management .refresh-btn,
+  .visitor-session-management .session-search {
+    display: none;
+  }
+
+  .visitor-session-management .session-summary-card,
+  .visitor-session-management .session-table-card {
+    background: #ffffff;
+
+    color: #111827;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow: none;
+  }
+
+  .visitor-session-management .management-header h2,
+  .visitor-session-management .table-header h3,
+  .visitor-session-management .session-summary-card strong {
+    color: #111827;
+  }
+
+  .visitor-session-management .management-header p,
+  .visitor-session-management .table-header p,
+  .visitor-session-management .session-summary-card h3 {
+    color: #475569;
+  }
+
+  .visitor-session-management .session-table thead {
+    background: #111827;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

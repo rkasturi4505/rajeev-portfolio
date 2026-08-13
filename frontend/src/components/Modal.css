@@ -1,0 +1,370 @@
+/* ==========================================================
+   COMMON MODAL
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+/* ==========================================================
+   MODAL OVERLAY
+========================================================== */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.72);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 9999;
+
+  animation: modalFadeIn 0.25s ease;
+}
+
+/* ==========================================================
+   MODAL CARD
+========================================================== */
+
+.modal-card {
+  width: 420px;
+
+  max-width: 92%;
+
+  padding: 32px;
+
+  background: linear-gradient(145deg, #111827 0%, #0f172a 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.28);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(212, 175, 55, 0.06);
+
+  animation: modalPopup 0.28s ease;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   MODAL ICON
+========================================================== */
+
+.modal-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* ==========================================================
+   WARNING
+========================================================== */
+
+.modal-icon.warning {
+  background: rgba(245, 158, 11, 0.12);
+
+  color: #fbbf24;
+
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* ==========================================================
+   SUCCESS
+========================================================== */
+
+.modal-icon.success {
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #4ade80;
+
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.modal-icon.error {
+  background: rgba(239, 68, 68, 0.12);
+
+  color: #f87171;
+
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.modal-card h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 24px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  letter-spacing: -0.2px;
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.modal-card p {
+  margin: 16px 0 28px;
+
+  color: #94a3b8;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.modal-actions {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* ==========================================================
+   COMMON MODAL BUTTON
+========================================================== */
+
+.modal-btn {
+  min-width: 125px;
+
+  min-height: 44px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   CANCEL
+========================================================== */
+
+.modal-card .cancel-btn {
+  background: #1e293b;
+
+  color: #cbd5e1;
+
+  border: 1px solid #334155;
+}
+
+.modal-card .cancel-btn:hover {
+  background: #273449;
+
+  color: #ffffff;
+
+  border-color: #475569;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   CONFIRM
+========================================================== */
+
+.modal-card .confirm-btn {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+
+  color: #111827;
+
+  border: 1px solid #d4af37;
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.18);
+}
+
+.modal-card .confirm-btn:hover {
+  background: linear-gradient(135deg, #e5c158, #c99a18);
+
+  color: #020617;
+
+  box-shadow: 0 12px 26px rgba(212, 175, 55, 0.28);
+}
+
+/* ==========================================================
+   SUCCESS BUTTON
+========================================================== */
+
+.modal-card .success-btn {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.18);
+}
+
+.modal-card .success-btn:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  box-shadow: 0 12px 26px rgba(34, 197, 94, 0.25);
+}
+
+/* ==========================================================
+   ERROR BUTTON
+========================================================== */
+
+.modal-card .error-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.18);
+}
+
+.modal-card .error-btn:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+
+  box-shadow: 0 12px 26px rgba(239, 68, 68, 0.25);
+}
+
+/* ==========================================================
+   FOCUS ACCESSIBILITY
+========================================================== */
+
+.modal-card button:focus-visible {
+  outline: 3px solid rgba(212, 175, 55, 0.35);
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes modalPopup {
+  from {
+    opacity: 0;
+
+    transform: scale(0.92) translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 18px;
+  }
+
+  .modal-card {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 26px 20px;
+
+    border-radius: 18px;
+  }
+
+  .modal-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+  }
+
+  .modal-card h2 {
+    font-size: 21px;
+  }
+
+  .modal-card p {
+    font-size: 13px;
+
+    margin-bottom: 24px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .modal-btn {
+    width: 100%;
+
+    min-width: 0;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

@@ -1,0 +1,320 @@
+/* ==========================================================
+   VISITOR ANALYTICS
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+.visitor-analytics {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 22px;
+
+  margin-top: 20px;
+}
+
+/* ==========================================================
+   ANALYTICS CARD
+========================================================== */
+
+.visitor-analytics .analytics-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #111827 0%, #0b0f14 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ==========================================================
+   SUBTLE GOLD ACCENT
+========================================================== */
+
+.visitor-analytics .analytics-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+
+  opacity: 0.65;
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.visitor-analytics .analytics-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.38),
+    0 0 25px rgba(212, 175, 55, 0.05);
+}
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.visitor-analytics .analytics-card h3 {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   MAIN NUMBER
+========================================================== */
+
+.visitor-analytics .analytics-card h1 {
+  margin: 14px 0 0;
+
+  font-size: 36px;
+
+  line-height: 1.1;
+
+  color: #d4af37;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.12);
+}
+
+/* ==========================================================
+   TEXT VALUES
+   Example: Chrome / India
+========================================================== */
+
+.visitor-analytics .analytics-card .text-value {
+  font-size: 24px;
+
+  line-height: 1.2;
+
+  text-transform: capitalize;
+
+  color: #f8fafc;
+
+  font-weight: 650;
+
+  word-break: break-word;
+}
+
+/* ==========================================================
+   CARD CONTENT POLISH
+========================================================== */
+
+.visitor-analytics .analytics-card p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   OPTIONAL ICON SUPPORT
+   Works if your VisitorAnalytics.tsx has .analytics-icon
+========================================================== */
+
+.visitor-analytics .analytics-icon {
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 11px;
+
+  background: rgba(212, 175, 55, 0.1);
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+
+  color: #d4af37;
+
+  font-size: 20px;
+}
+
+/* ==========================================================
+   OPTIONAL CARD VARIANTS
+========================================================== */
+
+.visitor-analytics .analytics-card.primary {
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+.visitor-analytics .analytics-card.primary h1 {
+  color: #e4c35a;
+}
+
+/* ==========================================================
+   GLOBAL BOX SIZING
+========================================================== */
+
+.visitor-analytics *,
+.visitor-analytics *::before,
+.visitor-analytics *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   RESPONSIVE — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .visitor-analytics {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+
+    gap: 20px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .visitor-analytics {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 16px;
+  }
+
+  .visitor-analytics .analytics-card {
+    padding: 22px;
+
+    border-radius: 16px;
+  }
+
+  .visitor-analytics .analytics-card h1 {
+    font-size: 32px;
+  }
+
+  .visitor-analytics .analytics-card .text-value {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .visitor-analytics {
+    gap: 15px;
+  }
+
+  .visitor-analytics .analytics-card {
+    padding: 20px;
+
+    border-radius: 15px;
+  }
+
+  .visitor-analytics .analytics-card h3 {
+    font-size: 12px;
+  }
+
+  .visitor-analytics .analytics-card h1 {
+    font-size: 30px;
+  }
+
+  .visitor-analytics .analytics-card .text-value {
+    font-size: 20px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .visitor-analytics *,
+  .visitor-analytics *::before,
+  .visitor-analytics *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .visitor-analytics {
+    display: grid;
+  }
+
+  .visitor-analytics .analytics-card {
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow: none;
+
+    color: #111827;
+  }
+
+  .visitor-analytics .analytics-card h3 {
+    color: #475569;
+  }
+
+  .visitor-analytics .analytics-card h1,
+  .visitor-analytics .analytics-card .text-value {
+    color: #111827;
+
+    text-shadow: none;
+  }
+
+  .visitor-analytics .analytics-card::before {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

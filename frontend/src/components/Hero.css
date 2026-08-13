@@ -1,0 +1,1193 @@
+/* ==========================================================
+   HERO SECTION
+   Premium Enterprise Black + Gold Portfolio UI
+========================================================== */
+
+.hero-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 28px 6% 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: visible;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(212, 175, 55, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(212, 175, 55, 0.04),
+      transparent 35%
+    ),
+    #0b0c10;
+
+  color: #e0e0e0;
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.hero-background::before {
+  content: "";
+
+  position: absolute;
+
+  width: 620px;
+  height: 620px;
+
+  top: -280px;
+  right: -200px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.035) 42%,
+    transparent 72%
+  );
+
+  filter: blur(12px);
+}
+
+.hero-background::after {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  left: -220px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.06) 0%,
+    rgba(212, 175, 55, 0.02) 45%,
+    transparent 78%
+  );
+}
+
+/* ==========================================================
+   MAIN LAYOUT
+========================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 1400px;
+
+  width: 100%;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1.08fr 0.92fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+  transform: translateY(-160px);
+}
+
+/* ==========================================================
+   LEFT SIDE
+========================================================== */
+
+.hero-left {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+/* ==========================================================
+   AVAILABILITY
+========================================================== */
+
+.availability {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  background: rgba(212, 175, 55, 0.07);
+
+  color: #d4af37;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  margin-bottom: 28px;
+
+  border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+/* ==========================================================
+   AVAILABILITY DOT
+========================================================== */
+
+.dot {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #d4af37;
+
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+}
+
+/* ==========================================================
+   SMALL TITLE
+========================================================== */
+
+.hero-small-title {
+  color: #d4af37;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+}
+
+/* ==========================================================
+   HERO NAME
+========================================================== */
+
+.hero-name {
+  font-size: 62px;
+
+  line-height: 1.04;
+
+  font-weight: 800;
+
+  letter-spacing: -1.8px;
+
+  color: #ffffff;
+
+  margin-bottom: 18px;
+}
+
+/* ==========================================================
+   HERO ROLE
+========================================================== */
+
+.hero-role {
+  min-height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.hero-role h2 {
+  font-size: 32px;
+
+  line-height: 1.2;
+
+  color: #d4af37;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================================
+   HERO SUMMARY
+========================================================== */
+
+.hero-summary {
+  max-width: 720px;
+
+  font-size: 17px;
+
+  line-height: 1.85;
+
+  color: #b8bbc2;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   ENTERPRISE HIGHLIGHTS
+========================================================== */
+
+.hero-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(190px, 1fr));
+
+  gap: 12px;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  margin-bottom: 28px;
+}
+
+/* ==========================================================
+   HIGHLIGHT ITEM
+========================================================== */
+
+.highlight-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 16px;
+
+  border-radius: 10px;
+
+  background: #121318;
+
+  border: 1px solid #292b31;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+/* ==========================================================
+   HIGHLIGHT HOVER
+========================================================== */
+
+.highlight-item:hover {
+  transform: translateY(-2px);
+
+  background: #15171d;
+
+  border-color: rgba(212, 175, 55, 0.38);
+}
+
+/* ==========================================================
+   HIGHLIGHT ICON
+========================================================== */
+
+.highlight-item svg {
+  font-size: 15px;
+
+  color: #d4af37;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   HIGHLIGHT TEXT
+========================================================== */
+
+.highlight-item span {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #d7d9dd;
+}
+
+/* ==========================================================
+   EXPERIENCE CARD
+========================================================== */
+
+.hero-experience-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 19px 24px;
+
+  border-radius: 12px;
+
+  background: #121318;
+
+  border: 1px solid #292b31;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   EXPERIENCE NUMBER
+========================================================== */
+
+.hero-experience-card h3 {
+  font-size: 38px;
+
+  line-height: 1;
+
+  color: #d4af37;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+/* ==========================================================
+   EXPERIENCE TEXT
+========================================================== */
+
+.hero-experience-card strong {
+  display: block;
+
+  font-size: 16px;
+
+  color: #ffffff;
+
+  margin-bottom: 3px;
+}
+
+.hero-experience-card span {
+  color: #9fa3aa;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   COMMON BUTTON
+========================================================== */
+
+.primary-btn,
+.secondary-btn,
+.outline-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 13px 22px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  cursor: pointer;
+}
+
+/* ==========================================================
+   PRIMARY BUTTON
+========================================================== */
+
+.primary-btn {
+  color: #0b0c10;
+
+  background: #d4af37;
+
+  border: 1px solid #d4af37;
+
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.14);
+}
+
+/* ==========================================================
+   PRIMARY HOVER
+========================================================== */
+
+.primary-btn:hover {
+  background: #f3d36a;
+
+  border-color: #f3d36a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.22);
+}
+
+/* ==========================================================
+   SECONDARY BUTTON
+========================================================== */
+
+.secondary-btn {
+  background: #121318;
+
+  color: #d4af37;
+
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+/* ==========================================================
+   SECONDARY HOVER
+========================================================== */
+
+.secondary-btn:hover {
+  background: rgba(212, 175, 55, 0.08);
+
+  border-color: #d4af37;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   OUTLINE BUTTON
+========================================================== */
+
+.outline-btn {
+  background: transparent;
+
+  color: #d7d9dd;
+
+  border: 1px solid #34363d;
+}
+
+/* ==========================================================
+   OUTLINE HOVER
+========================================================== */
+
+.outline-btn:hover {
+  background: #15171d;
+
+  border-color: #d4af37;
+
+  color: #d4af37;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   SOCIAL LINKS
+========================================================== */
+
+.hero-social-links {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 34px;
+}
+
+.hero-social-links a {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #121318;
+
+  color: #b8bbc2;
+
+  font-size: 17px;
+
+  text-decoration: none;
+
+  border: 1px solid #292b31;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==========================================================
+   SOCIAL HOVER
+========================================================== */
+
+.hero-social-links a:hover {
+  background: rgba(212, 175, 55, 0.08);
+
+  color: #d4af37;
+
+  border-color: rgba(212, 175, 55, 0.45);
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   TECHNOLOGY STACK
+========================================================== */
+
+.tech-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+/* ==========================================================
+   TECH CHIP
+========================================================== */
+
+.tech-chip {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  border-radius: 7px;
+
+  background: #121318;
+
+  border: 1px solid #292b31;
+
+  color: #cfd1d5;
+
+  font-weight: 600;
+
+  font-size: 12px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==========================================================
+   TECH ICON
+========================================================== */
+
+.tech-chip svg {
+  font-size: 15px;
+
+  color: #d4af37;
+}
+
+/* ==========================================================
+   TECH CHIP HOVER
+========================================================== */
+
+.tech-chip:hover {
+  transform: translateY(-2px);
+
+  background: rgba(212, 175, 55, 0.07);
+
+  color: #f3e5ab;
+
+  border-color: rgba(212, 175, 55, 0.42);
+}
+
+/* ==========================================================
+   RIGHT SIDE
+========================================================== */
+
+.hero-right {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+}
+
+/* ==========================================================
+   PHOTO CARD
+========================================================== */
+
+.hero-photo-card {
+  position: relative;
+
+  width: 520px;
+
+  height: 620px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: -450px;
+}
+
+/* ==========================================================
+   GOLD GLOW
+========================================================== */
+
+.glow-circle {
+  position: absolute;
+
+  width: 430px;
+
+  height: 430px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.16),
+    rgba(212, 175, 55, 0.05),
+    transparent 72%
+  );
+
+  filter: blur(28px);
+
+  z-index: 0;
+}
+
+/* ==========================================================
+   GOLD RING
+========================================================== */
+
+.rotating-ring {
+  position: absolute;
+
+  width: 430px;
+
+  height: 430px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 175, 55, 0.28);
+
+  z-index: 1;
+}
+
+/* ==========================================================
+   PROFILE IMAGE
+========================================================== */
+
+.hero-image {
+  position: relative;
+
+  width: 390px;
+
+  height: 390px;
+
+  border-radius: 50%;
+
+  padding: 6px;
+
+  background: linear-gradient(135deg, #d4af37, #f3d36a, #a98219);
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(212, 175, 55, 0.1);
+
+  overflow: hidden;
+
+  z-index: 3;
+}
+
+/* ==========================================================
+   PROFILE IMAGE ELEMENT
+========================================================== */
+
+.hero-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  border-radius: 50%;
+
+  background: #121318;
+
+  display: block;
+}
+
+/* ==========================================================
+   FLOATING TECHNOLOGY BADGE
+========================================================== */
+
+.hero-tech-badge {
+  position: absolute;
+
+  top: 30px;
+
+  right: -10px;
+
+  padding: 10px 16px;
+
+  border-radius: 7px;
+
+  background: #121318;
+
+  color: #d4af37;
+
+  font-weight: 700;
+
+  font-size: 12px;
+
+  border: 1px solid rgba(212, 175, 55, 0.35);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+
+  z-index: 5;
+}
+
+/* ==========================================================
+   FLOATING CARDS
+========================================================== */
+
+.floating-card {
+  position: absolute;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(18, 19, 24, 0.96);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid #292b31;
+
+  border-radius: 11px;
+
+  padding: 16px 20px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+
+  z-index: 5;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* ==========================================================
+   FLOATING CARD HOVER
+========================================================== */
+
+.floating-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(212, 175, 55, 0.42);
+}
+
+/* ==========================================================
+   FLOATING CARD HEADING
+========================================================== */
+
+.floating-card h3 {
+  font-size: 27px;
+
+  font-weight: 800;
+
+  color: #d4af37;
+
+  margin-bottom: 5px;
+}
+
+/* ==========================================================
+   FLOATING CARD TEXT
+========================================================== */
+
+.floating-card p,
+.floating-card span {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #aeb1b7;
+
+  text-align: center;
+}
+
+/* ==========================================================
+   FLOATING CARD ICON
+========================================================== */
+
+.floating-card svg {
+  font-size: 24px;
+
+  color: #d4af37;
+
+  margin-bottom: 8px;
+}
+
+/* ==========================================================
+   CARD POSITIONS
+========================================================== */
+
+.experience-floating {
+  left: -30px;
+
+  bottom: 80px;
+
+  min-width: 160px;
+}
+
+.projects-floating {
+  right: -40px;
+
+  bottom: 130px;
+
+  min-width: 170px;
+}
+
+.tech-floating {
+  top: 120px;
+
+  left: -45px;
+
+  flex-direction: row;
+
+  gap: 9px;
+
+  padding: 12px 16px;
+}
+
+.tech-floating svg {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   IMAGE HOVER
+========================================================== */
+
+.hero-photo-card:hover .hero-image {
+  transform: scale(1.015);
+
+  transition: transform 0.35s ease;
+}
+
+.hero-photo-card:hover .rotating-ring {
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.hero-photo-card:hover .glow-circle {
+  transform: scale(1.04);
+
+  transition: 0.4s ease;
+}
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.hero-image,
+.rotating-ring,
+.glow-circle,
+.tech-chip,
+.highlight-item,
+.hero-social-links a,
+.primary-btn,
+.secondary-btn,
+.outline-btn,
+.floating-card {
+  will-change: transform;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1200px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    text-align: center;
+
+    transform: translateY(-70px);
+  }
+
+  .hero-left {
+    align-items: center;
+  }
+
+  .hero-summary {
+    max-width: 850px;
+  }
+
+  .hero-highlights {
+    max-width: 720px;
+  }
+
+  .hero-buttons,
+  .hero-social-links,
+  .tech-stack {
+    justify-content: center;
+  }
+
+  .hero-photo-card {
+    width: 460px;
+
+    height: 560px;
+
+    margin-top: -100px;
+  }
+
+  .hero-image {
+    width: 320px;
+
+    height: 320px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 90px 24px;
+
+    overflow: visible;
+  }
+
+  .hero-content {
+    transform: translateY(0);
+  }
+
+  .hero-name {
+    font-size: 46px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .hero-role h2 {
+    font-size: 28px;
+  }
+
+  .hero-summary {
+    font-size: 16px;
+  }
+
+  .hero-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .outline-btn {
+    width: 100%;
+  }
+
+  .hero-photo-card {
+    width: 360px;
+
+    height: 460px;
+
+    margin-top: 0;
+  }
+
+  .hero-image {
+    width: 260px;
+
+    height: 260px;
+
+    padding: 5px;
+  }
+
+  .hero-tech-badge {
+    position: static;
+
+    margin-bottom: 20px;
+  }
+
+  .experience-floating,
+  .projects-floating,
+  .tech-floating {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 70px 18px;
+  }
+
+  .hero-name {
+    font-size: 36px;
+  }
+
+  .hero-role {
+    min-height: 50px;
+  }
+
+  .hero-role h2 {
+    font-size: 22px;
+  }
+
+  .hero-small-title {
+    font-size: 14px;
+  }
+
+  .hero-summary {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+  .hero-photo-card {
+    width: 300px;
+
+    height: 390px;
+  }
+
+  .hero-image {
+    width: 220px;
+
+    height: 220px;
+  }
+
+  .hero-experience-card {
+    padding: 17px;
+  }
+
+  .hero-experience-card h3 {
+    font-size: 34px;
+  }
+
+  .highlight-item {
+    padding: 12px 14px;
+  }
+
+  .tech-chip {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .hero-section {
+    background: white;
+
+    color: #111111;
+
+    padding: 0;
+
+    min-height: auto;
+
+    overflow: visible;
+  }
+
+  .hero-background,
+  .glow-circle,
+  .rotating-ring,
+  .hero-social-links,
+  .hero-buttons,
+  .hero-tech-badge,
+  .floating-card {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    transform: none;
+  }
+
+  .hero-name {
+    color: #111111;
+  }
+
+  .hero-role h2,
+  .hero-small-title {
+    color: #8a6d16;
+  }
+
+  .hero-image {
+    box-shadow: none;
+
+    border: 1px solid #999999;
+  }
+}

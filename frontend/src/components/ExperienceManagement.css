@@ -1,0 +1,969 @@
+/* ==========================================================
+   EXPERIENCE MANAGEMENT
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+.experience-management {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  padding: 0 0 25px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  transform: translateY(-20px);
+}
+
+.experience-management *,
+.experience-management *::before,
+.experience-management *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.experience-management .management-header {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.experience-management .management-header h2 {
+  margin: 0;
+
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.experience-management .management-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   EXPERIENCE CARD
+========================================================== */
+
+.experience-management .experience-card,
+.experience-management .experience-list-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  padding: 26px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.experience-management .experience-card:hover,
+.experience-management .experience-list-card:hover {
+  border-color: #d6b35a;
+
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.09),
+    0 4px 14px rgba(212, 175, 55, 0.08);
+}
+
+/* ==========================================================
+   EXPERIENCE TITLE ROW
+========================================================== */
+
+.experience-management .experience-title-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.experience-management .experience-title-row h2 {
+  margin: 0;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+/* ==========================================================
+   EXPERIENCE HEADER TOP
+========================================================== */
+
+.experience-management .experience-header-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.experience-management .experience-header-left {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+}
+
+.experience-management .experience-header-left h2 {
+  margin: 0;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  color: #0f172a;
+}
+
+.experience-management .experience-subtitle {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   STATUS BADGES
+========================================================== */
+
+.experience-management .add-mode,
+.experience-management .edit-mode {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 0 15px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  margin: 0;
+}
+
+.experience-management .add-mode {
+  background: #fff9e6;
+
+  color: #a67c00;
+
+  border: 1px solid #ead28b;
+}
+
+.experience-management .edit-mode {
+  background: #fffbeb;
+
+  color: #a16207;
+
+  border: 1px solid #e5c76b;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.experience-management .experience-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  box-shadow: none;
+}
+
+.experience-management .experience-form-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* ==========================================================
+   FORM INPUTS
+========================================================== */
+
+.experience-management .experience-form input,
+.experience-management .experience-form textarea {
+  width: 100%;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.experience-management .experience-form input {
+  height: 50px;
+
+  padding: 0 16px;
+}
+
+.experience-management .experience-form textarea {
+  min-height: 125px;
+
+  padding: 14px 16px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+
+  grid-column: 1 / -1;
+}
+
+.experience-management .experience-form input::placeholder,
+.experience-management .experience-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.experience-management .experience-form input:hover,
+.experience-management .experience-form textarea:hover {
+  border-color: #94a3b8;
+}
+
+.experience-management .experience-form input:focus,
+.experience-management .experience-form textarea:focus {
+  border-color: #c9a227;
+
+  background: #fffdf7;
+
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.14);
+}
+
+/* ==========================================================
+   BUTTON GROUP
+========================================================== */
+
+.experience-management .button-group {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================
+   COMMON BUTTON
+========================================================== */
+
+.experience-management .save-button,
+.experience-management .cancel-button,
+.experience-management .edit-button,
+.experience-management .delete-button {
+  border: none;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* ==========================================================
+   SAVE BUTTON
+========================================================== */
+
+.experience-management .save-button {
+  min-height: 48px;
+
+  min-width: 220px;
+
+  padding: 0 22px;
+
+  background: linear-gradient(135deg, #c9a227, #a67c00);
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 20px rgba(166, 124, 0, 0.22);
+}
+
+.experience-management .save-button:hover {
+  background: linear-gradient(135deg, #b8911f, #8f6b00);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(166, 124, 0, 0.28);
+}
+
+.experience-management .save-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* ==========================================================
+   CANCEL BUTTON
+========================================================== */
+
+.experience-management .cancel-button {
+  min-height: 48px;
+
+  min-width: 130px;
+
+  padding: 0 20px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  border: 1px solid #cbd5e1;
+}
+
+.experience-management .cancel-button:hover {
+  background: #e2e8f0;
+
+  border-color: #94a3b8;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   LIST HEADER
+========================================================== */
+
+.experience-management .experience-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.experience-management .experience-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.experience-management .experience-count {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.experience-management .search-experience {
+  width: 300px;
+
+  height: 46px;
+
+  flex-shrink: 0;
+
+  padding: 0 15px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.experience-management .search-experience::placeholder {
+  color: #94a3b8;
+}
+
+.experience-management .search-experience:hover {
+  border-color: #94a3b8;
+}
+
+.experience-management .search-experience:focus {
+  border-color: #c9a227;
+
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.14);
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.experience-management .experience-wrapper {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+/* ==========================================================
+   TABLE SCROLLBAR
+========================================================== */
+
+.experience-management .experience-wrapper::-webkit-scrollbar {
+  height: 9px;
+}
+
+.experience-management .experience-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.experience-management .experience-wrapper::-webkit-scrollbar-thumb {
+  background: #c9a227;
+
+  border-radius: 999px;
+}
+
+.experience-management .experience-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a67c00;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.experience-management .experience-table {
+  width: max-content;
+
+  min-width: 1800px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.experience-management .experience-table thead {
+  background: #0b0f14;
+}
+
+.experience-management .experience-table th {
+  padding: 16px 18px;
+
+  color: #f8fafc;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25px;
+
+  white-space: nowrap;
+
+  border-bottom: 2px solid #c9a227;
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.experience-management .experience-table td {
+  padding: 16px 18px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  white-space: nowrap;
+}
+
+.experience-management .experience-table tbody tr {
+  background: #ffffff;
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.experience-management .experience-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.experience-management .experience-table tbody tr:hover {
+  background: #fffbeb;
+
+  box-shadow: inset 3px 0 0 #c9a227;
+}
+
+/* ==========================================================
+   DESCRIPTION COLUMN
+========================================================== */
+
+.experience-management .description-column {
+  min-width: 350px;
+
+  max-width: 500px;
+
+  white-space: normal !important;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+
+  color: #475569;
+}
+
+/* ==========================================================
+   ACTION BUTTONS
+========================================================== */
+
+.experience-management .edit-button,
+.experience-management .delete-button {
+  min-width: 78px;
+
+  height: 36px;
+
+  padding: 0 14px;
+
+  color: #ffffff;
+}
+
+.experience-management .edit-button {
+  margin-right: 8px;
+
+  background: #c9a227;
+}
+
+.experience-management .edit-button:hover {
+  background: #a67c00;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(166, 124, 0, 0.22);
+}
+
+.experience-management .delete-button {
+  background: #ef4444;
+}
+
+.experience-management .delete-button:hover {
+  background: #dc2626;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(239, 68, 68, 0.22);
+}
+
+/* ==========================================================
+   NO DATA
+========================================================== */
+
+.experience-management .no-data {
+  height: 180px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.experience-management .loading-container {
+  min-height: 260px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.experience-management .loader {
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: 4px solid #e2e8f0;
+
+  border-top-color: #c9a227;
+
+  animation: experienceSpin 0.8s linear infinite;
+}
+
+.experience-management .loading-container p {
+  margin: 15px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+@keyframes experienceSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.experience-management .error-container {
+  min-height: 260px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+}
+
+.experience-management .error-container h3 {
+  margin: 0 0 8px;
+
+  color: #dc2626;
+
+  font-size: 18px;
+}
+
+.experience-management .error-container p {
+  margin: 0 0 20px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* ==========================================================
+   ENTERPRISE GOLD ACCENT
+========================================================== */
+
+.experience-management .experience-card::before,
+.experience-management .experience-list-card::before {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+
+  height: 3px;
+
+  margin-bottom: 18px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #c9a227, #ead28b);
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.experience-management input:focus-visible,
+.experience-management textarea:focus-visible,
+.experience-management button:focus-visible {
+  outline: 3px solid rgba(201, 162, 39, 0.22);
+
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   RESPONSIVE - 1100px
+========================================================== */
+
+@media (max-width: 1100px) {
+  .experience-management .experience-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE - 900px
+========================================================== */
+
+@media (max-width: 900px) {
+  .experience-management .experience-header-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .experience-management .experience-header {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .experience-management .search-experience {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE - 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .experience-management {
+    transform: translateY(-10px);
+
+    gap: 18px;
+  }
+
+  .experience-management .management-header h2 {
+    font-size: 28px;
+  }
+
+  .experience-management .experience-card,
+  .experience-management .experience-list-card {
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .experience-management .experience-title-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .experience-management .experience-title-row h2 {
+    font-size: 22px;
+  }
+
+  .experience-management .experience-header-left h2 {
+    font-size: 22px;
+  }
+
+  .experience-management .button-group {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .experience-management .save-button,
+  .experience-management .cancel-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .experience-management .experience-table {
+    min-width: 1500px;
+  }
+
+  .experience-management .experience-table th,
+  .experience-management .experience-table td {
+    padding: 13px 14px;
+
+    font-size: 12px;
+  }
+
+  .experience-management .edit-button,
+  .experience-management .delete-button {
+    min-width: 70px;
+
+    height: 34px;
+
+    margin: 4px 0;
+
+    padding: 0 11px;
+
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE - 576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .experience-management {
+    transform: none;
+
+    padding-bottom: 15px;
+  }
+
+  .experience-management .management-header h2 {
+    font-size: 25px;
+  }
+
+  .experience-management .management-header p {
+    font-size: 14px;
+  }
+
+  .experience-management .experience-card,
+  .experience-management .experience-list-card {
+    padding: 16px;
+
+    border-radius: 16px;
+  }
+
+  .experience-management .experience-form input {
+    height: 46px;
+
+    padding: 0 14px;
+
+    font-size: 13px;
+  }
+
+  .experience-management .experience-form textarea {
+    min-height: 110px;
+
+    padding: 12px 14px;
+
+    font-size: 13px;
+  }
+
+  .experience-management .save-button,
+  .experience-management .cancel-button {
+    min-height: 46px;
+
+    font-size: 13px;
+  }
+
+  .experience-management .experience-table {
+    min-width: 1400px;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

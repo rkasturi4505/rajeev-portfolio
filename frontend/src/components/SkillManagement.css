@@ -1,0 +1,1015 @@
+/* ==========================================================
+   SKILL MANAGEMENT
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+.skill-management {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 0 20px;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.skill-management .management-header {
+  margin: 0 0 4px;
+}
+
+.skill-management .management-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: #f8fafc;
+}
+
+.skill-management .management-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   MAIN CARDS
+========================================================== */
+
+.skill-management .skill-card,
+.skill-management .skill-list-card {
+  width: 100%;
+
+  background: linear-gradient(145deg, #111827 0%, #0b0f14 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill-management .skill-card:hover,
+.skill-management .skill-list-card:hover {
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(212, 175, 55, 0.04);
+}
+
+/* ==========================================================
+   TITLE SECTION
+========================================================== */
+
+.skill-management .skill-title-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 28px;
+}
+
+.skill-management .skill-title-row h2 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   STATUS BADGES
+========================================================== */
+
+.skill-management .add-mode,
+.skill-management .edit-mode {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+
+  border: 1px solid;
+}
+
+.skill-management .add-mode {
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.skill-management .edit-mode {
+  background: rgba(212, 175, 55, 0.14);
+
+  color: #e4c35a;
+
+  border-color: rgba(212, 175, 55, 0.38);
+}
+
+/* ==========================================================
+   FORM GRID
+========================================================== */
+
+.skill-management .skill-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+
+  gap: 22px;
+
+  margin-bottom: 22px;
+}
+
+/* ==========================================================
+   FORM INPUTS
+========================================================== */
+
+.skill-management .skill-grid input,
+.skill-management .skill-grid select {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 15px;
+
+  border: 1px solid #334155;
+
+  border-radius: 10px;
+
+  background: #090d12;
+
+  color: #f8fafc;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.skill-management .skill-grid input::placeholder {
+  color: #64748b;
+}
+
+.skill-management .skill-grid input:hover,
+.skill-management .skill-grid select:hover {
+  border-color: #64748b;
+
+  background: #0d1218;
+}
+
+.skill-management .skill-grid input:focus,
+.skill-management .skill-grid select:focus {
+  border-color: #d4af37;
+
+  background: #0d1218;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.12),
+    0 0 18px rgba(212, 175, 55, 0.04);
+}
+
+/* ==========================================================
+   SELECT OPTION COLORS
+========================================================== */
+
+.skill-management .skill-grid select option {
+  background: #111827;
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   AUTOCOMPLETE
+========================================================== */
+
+.skill-management .skill-autocomplete {
+  position: relative;
+
+  width: 100%;
+}
+
+.skill-management .suggestion-box {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 0;
+
+  width: 100%;
+
+  background: #111827;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  z-index: 50;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.skill-management .suggestion-item {
+  padding: 12px 15px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  color: #cbd5e1;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.skill-management .suggestion-item:hover {
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+}
+
+/* ==========================================================
+   ACTION ROW
+========================================================== */
+
+.skill-management .skill-action-row {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 26px;
+
+  align-items: center;
+}
+
+.skill-management .skill-action-row .save-skill-btn {
+  flex: 1;
+}
+
+/* ==========================================================
+   SAVE BUTTON
+========================================================== */
+
+.skill-management .save-skill-btn {
+  border: 1px solid #d4af37;
+
+  border-radius: 10px;
+
+  padding: 14px 20px;
+
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+
+  color: #090d12;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.16);
+}
+
+.skill-management .save-skill-btn:hover {
+  background: linear-gradient(135deg, #e4c35a, #c99716);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.25);
+}
+
+.skill-management .save-skill-btn:active {
+  transform: translateY(0);
+}
+
+.skill-management .save-skill-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* ==========================================================
+   CANCEL BUTTON
+========================================================== */
+
+.skill-management .cancel-btn {
+  min-width: 150px;
+
+  padding: 14px 24px;
+
+  border: 1px solid #334155;
+
+  border-radius: 10px;
+
+  background: #111827;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill-management .cancel-btn:hover {
+  background: #1e293b;
+
+  border-color: #64748b;
+
+  color: #f8fafc;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   SKILL LIST HEADER
+========================================================== */
+
+.skill-management .skill-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.skill-management .skill-header h2 {
+  margin: 0;
+
+  font-size: 25px;
+
+  color: #f8fafc;
+
+  font-weight: 700;
+}
+
+/* ==========================================================
+   COUNT TEXT
+========================================================== */
+
+.skill-management .project-count {
+  margin-top: 7px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.skill-management .search-skill {
+  width: 300px;
+
+  height: 44px;
+
+  padding: 0 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+
+  background: #090d12;
+
+  color: #f8fafc;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.skill-management .search-skill::placeholder {
+  color: #64748b;
+}
+
+.skill-management .search-skill:hover {
+  border-color: #64748b;
+
+  background: #0d1218;
+}
+
+.skill-management .search-skill:focus {
+  border-color: #d4af37;
+
+  background: #0d1218;
+
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.skill-management .skill-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 12px;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.skill-management .skill-table {
+  width: 100%;
+
+  min-width: 800px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  overflow: hidden;
+}
+
+.skill-management .skill-table thead {
+  background: linear-gradient(135deg, #090d12, #111827);
+}
+
+.skill-management .skill-table th {
+  padding: 16px 18px;
+
+  color: #d4af37;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.skill-management .skill-table td {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #252c35;
+
+  background: #111827;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  vertical-align: middle;
+}
+
+.skill-management .skill-table tbody tr {
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill-management .skill-table tbody tr:nth-child(even) td {
+  background: #0f151d;
+}
+
+.skill-management .skill-table tbody tr:hover td {
+  background: #171d26;
+
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   TABLE FIRST / LAST HEADER
+========================================================== */
+
+.skill-management .skill-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.skill-management .skill-table th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* ==========================================================
+   SKILL LEVEL BADGES
+========================================================== */
+
+.skill-management .skill-level {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 13px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  border: 1px solid;
+}
+
+.skill-management .skill-level.beginner {
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #f87171;
+
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.skill-management .skill-level.intermediate {
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.skill-management .skill-level.advanced {
+  background: rgba(96, 165, 250, 0.1);
+
+  color: #60a5fa;
+
+  border-color: rgba(96, 165, 250, 0.25);
+}
+
+.skill-management .skill-level.expert {
+  background: rgba(34, 197, 94, 0.1);
+
+  color: #4ade80;
+
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+/* ==========================================================
+   TABLE ACTION BUTTONS
+========================================================== */
+
+.skill-management .edit-btn,
+.skill-management .delete-btn {
+  border: 1px solid;
+
+  padding: 9px 16px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill-management .edit-btn {
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+
+  border-color: rgba(212, 175, 55, 0.3);
+
+  margin-right: 9px;
+}
+
+.skill-management .edit-btn:hover {
+  background: #d4af37;
+
+  color: #090d12;
+
+  border-color: #d4af37;
+
+  transform: translateY(-2px);
+}
+
+.skill-management .delete-btn {
+  background: rgba(239, 68, 68, 0.1);
+
+  color: #f87171;
+
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.skill-management .delete-btn:hover {
+  background: #ef4444;
+
+  color: #ffffff;
+
+  border-color: #ef4444;
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.skill-management .empty-row {
+  text-align: center;
+
+  padding: 55px 20px !important;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+.skill-management .empty-row td {
+  background: #111827;
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.skill-management .loading-container {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 65px 20px;
+}
+
+.skill-management .loader {
+  width: 42px;
+
+  height: 42px;
+
+  border: 4px solid #252c35;
+
+  border-top-color: #d4af37;
+
+  border-radius: 50%;
+
+  animation: skillSpin 0.8s linear infinite;
+
+  margin-bottom: 18px;
+}
+
+.skill-management .loading-container p {
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+@keyframes skillSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.skill-management .error-container {
+  text-align: center;
+
+  padding: 50px;
+
+  background: linear-gradient(145deg, #1a1012, #120b0d);
+
+  border: 1px solid rgba(239, 68, 68, 0.25);
+
+  border-radius: 14px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.skill-management .error-container h3 {
+  margin: 0 0 10px;
+
+  color: #f87171;
+}
+
+.skill-management .error-container p {
+  color: #94a3b8;
+
+  margin: 0 0 20px;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.skill-management input:focus-visible,
+.skill-management select:focus-visible,
+.skill-management button:focus-visible {
+  outline: 2px solid #d4af37;
+
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   GLOBAL BOX SIZING
+========================================================== */
+
+.skill-management *,
+.skill-management *::before,
+.skill-management *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+.skill-management input,
+.skill-management select,
+.skill-management button,
+.skill-management .skill-card,
+.skill-management .skill-list-card {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+.skill-management .skill-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+
+  height: 8px;
+}
+
+.skill-management .skill-table-wrapper::-webkit-scrollbar-track {
+  background: #090d12;
+
+  border-radius: 999px;
+}
+
+.skill-management .skill-table-wrapper::-webkit-scrollbar-thumb {
+  background: #475569;
+
+  border-radius: 999px;
+}
+
+.skill-management .skill-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* ==========================================================
+   RESPONSIVE — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .skill-management .skill-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .skill-management .search-skill {
+    width: 100%;
+  }
+
+  .skill-management .skill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .skill-management {
+    gap: 20px;
+  }
+
+  .skill-management .skill-card,
+  .skill-management .skill-list-card {
+    padding: 22px;
+
+    border-radius: 16px;
+  }
+
+  .skill-management .management-header h2 {
+    font-size: 28px;
+  }
+
+  .skill-management .skill-title-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .skill-management .skill-title-row h2 {
+    font-size: 24px;
+  }
+
+  .skill-management .skill-header h2 {
+    font-size: 23px;
+  }
+
+  .skill-management .skill-grid {
+    gap: 18px;
+  }
+
+  .skill-management .skill-action-row {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .skill-management .save-skill-btn,
+  .skill-management .cancel-btn {
+    width: 100%;
+  }
+
+  .skill-management .cancel-btn {
+    min-width: unset;
+  }
+
+  .skill-management .skill-table th,
+  .skill-management .skill-table td {
+    padding: 14px;
+
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .skill-management .management-header h2 {
+    font-size: 25px;
+  }
+
+  .skill-management .management-header p {
+    font-size: 14px;
+  }
+
+  .skill-management .skill-card,
+  .skill-management .skill-list-card {
+    padding: 18px;
+
+    border-radius: 15px;
+  }
+
+  .skill-management .skill-title-row h2 {
+    font-size: 22px;
+  }
+
+  .skill-management .skill-header h2 {
+    font-size: 21px;
+  }
+
+  .skill-management .skill-grid input,
+  .skill-management .skill-grid select {
+    height: 44px;
+
+    font-size: 14px;
+  }
+
+  .skill-management .edit-btn,
+  .skill-management .delete-btn {
+    width: 100%;
+
+    margin: 5px 0;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-management *,
+  .skill-management *::before,
+  .skill-management *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .skill-management {
+    color: #111827;
+  }
+
+  .skill-management .skill-card,
+  .skill-management .skill-list-card {
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow: none;
+  }
+
+  .skill-management .management-header h2,
+  .skill-management .skill-title-row h2,
+  .skill-management .skill-header h2 {
+    color: #111827;
+  }
+
+  .skill-management .management-header p,
+  .skill-management .project-count {
+    color: #475569;
+  }
+
+  .skill-management .save-skill-btn,
+  .skill-management .cancel-btn,
+  .skill-management .edit-btn,
+  .skill-management .delete-btn,
+  .skill-management .search-skill {
+    display: none;
+  }
+
+  .skill-management .skill-table td {
+    background: #ffffff;
+
+    color: #334155;
+
+    border-color: #d1d5db;
+  }
+
+  .skill-management .skill-table thead {
+    background: #111827;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

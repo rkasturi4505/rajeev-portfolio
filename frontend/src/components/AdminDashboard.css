@@ -1,0 +1,1411 @@
+/* ==========================================================
+   ADMIN DASHBOARD
+   Premium Enterprise Black + Gold
+   Senior Java Developer Portfolio
+========================================================== */
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   DASHBOARD ROOT
+========================================================== */
+
+.admin-dashboard {
+  display: flex;
+
+  min-height: 100vh;
+
+  background: #080808;
+
+  color: #b8b8b8;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.admin-sidebar {
+  width: 270px;
+
+  height: 100vh;
+
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%);
+
+  color: #ffffff;
+
+  padding: 26px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-right: 1px solid #292929;
+
+  z-index: 100;
+
+  overflow-y: auto;
+
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.admin-sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ==========================================================
+   ADMIN LOGO
+========================================================== */
+
+.admin-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 35px;
+}
+
+/* ==========================================================
+   ADMIN LOGO CIRCLE
+========================================================== */
+
+.admin-logo-circle {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 12px;
+
+  background: #f5b800;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  color: #111111;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 8px 22px rgba(245, 184, 0, 0.16);
+}
+
+/* ==========================================================
+   ADMIN LOGO TEXT
+========================================================== */
+
+.admin-logo h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  letter-spacing: -0.2px;
+}
+
+.admin-logo span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+/* ==========================================================
+   SIDEBAR MENU
+========================================================== */
+
+.sidebar-menu {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  flex: 1;
+}
+
+/* ==========================================================
+   SIDEBAR ITEM
+========================================================== */
+
+.sidebar-item {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 12px 15px;
+
+  border: 1px solid transparent;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #a6a6a6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-item svg {
+  font-size: 17px;
+
+  min-width: 20px;
+
+  color: #777777;
+
+  transition: color 0.2s ease;
+}
+
+/* ==========================================================
+   SIDEBAR HOVER
+========================================================== */
+
+.sidebar-item:hover {
+  background: rgba(245, 184, 0, 0.06);
+
+  border-color: rgba(245, 184, 0, 0.15);
+
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.sidebar-item:hover svg {
+  color: #f5b800;
+}
+
+/* ==========================================================
+   SIDEBAR ACTIVE
+========================================================== */
+
+.sidebar-item.active {
+  background: rgba(245, 184, 0, 0.12);
+
+  border-color: rgba(245, 184, 0, 0.3);
+
+  color: #f5b800;
+
+  box-shadow: inset 3px 0 0 #f5b800;
+}
+
+.sidebar-item.active svg {
+  color: #f5b800;
+}
+
+/* ==========================================================
+   LOGOUT BUTTON
+========================================================== */
+
+.logout-btn {
+  margin-top: 20px;
+
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  border: 1px solid #292929;
+
+  background: #111111;
+
+  color: #b8b8b8;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 38, 38, 0.1);
+
+  border-color: rgba(220, 38, 38, 0.35);
+
+  color: #ef4444;
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   MAIN AREA
+========================================================== */
+
+.admin-main {
+  flex: 1;
+
+  margin-left: 270px;
+
+  min-height: 100vh;
+
+  padding: 20px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  width: calc(100% - 270px);
+
+  background: #080808;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.admin-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  padding-top: 0;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   HEADER SEARCH
+========================================================== */
+
+.header-search {
+  width: 320px;
+
+  height: 44px;
+
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 15px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header-search:focus-within {
+  border-color: rgba(245, 184, 0, 0.5);
+
+  box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.06);
+}
+
+.header-search svg {
+  color: #777777;
+
+  flex-shrink: 0;
+}
+
+.header-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.header-search input::placeholder {
+  color: #5f5f5f;
+}
+
+/* ==========================================================
+   HEADER ACTIONS
+========================================================== */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.header-icon {
+  font-size: 20px;
+
+  color: #777777;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header-icon:hover {
+  color: #f5b800;
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   USER ICON
+========================================================== */
+
+.user-icon {
+  font-size: 40px;
+
+  color: #f5b800;
+}
+
+/* ==========================================================
+   ADMIN CONTENT
+========================================================== */
+
+.admin-content {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  padding: 10px 0 30px;
+
+  animation: fadeUp 0.35s ease;
+}
+
+.admin-content > * {
+  margin-bottom: 25px;
+}
+
+/* ==========================================================
+   CONTENT HEADING
+========================================================== */
+
+.admin-content h1 {
+  margin: 0 0 18px;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================================
+   DASHBOARD STAT GRID
+========================================================== */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   ANALYTICS CARD
+========================================================== */
+
+.analytics-card {
+  background: linear-gradient(145deg, #111111, #0d0d0d);
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  border: 1px solid #292929;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.analytics-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(245, 184, 0, 0.45);
+
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(245, 184, 0, 0.04);
+}
+
+/* ==========================================================
+   ANALYTICS ICON
+========================================================== */
+
+.analytics-icon {
+  width: 54px;
+
+  height: 54px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: rgba(245, 184, 0, 0.1);
+
+  border: 1px solid rgba(245, 184, 0, 0.2);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #f5b800;
+
+  font-size: 22px;
+}
+
+/* Keep all analytics icons consistent */
+
+.analytics-icon.views,
+.analytics-icon.downloads,
+.analytics-icon.messages,
+.analytics-icon.security {
+  background: rgba(245, 184, 0, 0.08);
+
+  color: #f5b800;
+}
+
+/* ==========================================================
+   ANALYTICS NUMBER
+========================================================== */
+
+.analytics-card h3,
+.analytics-card h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+/* ==========================================================
+   ANALYTICS LABEL
+========================================================== */
+
+.analytics-card p {
+  margin: 5px 0 0;
+
+  color: #a6a6a6;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   ANALYTICS SECONDARY TEXT
+========================================================== */
+
+.analytics-card span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #5f5f5f;
+
+  font-size: 11px;
+}
+
+/* ==========================================================
+   SECTION CARDS
+========================================================== */
+
+.dashboard-section {
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  padding: 26px;
+
+  border-radius: 15px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+.section-header span {
+  color: #777777;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 9px;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.dashboard-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  background: #111111;
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.dashboard-table thead {
+  background: #0b0b0b;
+}
+
+.dashboard-table th {
+  padding: 14px 16px;
+
+  color: #f5b800;
+
+  text-align: left;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  border-bottom: 1px solid rgba(245, 184, 0, 0.35);
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.dashboard-table td {
+  padding: 14px 16px;
+
+  color: #b8b8b8;
+
+  border-bottom: 1px solid #242424;
+
+  vertical-align: top;
+
+  font-size: 13px;
+}
+
+.dashboard-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: rgba(245, 184, 0, 0.035);
+}
+
+/* ==========================================================
+   MESSAGE CELL
+========================================================== */
+
+.message-cell {
+  max-width: 420px;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+
+  color: #b8b8b8;
+}
+
+/* ==========================================================
+   EMPTY ROW
+========================================================== */
+
+.empty-row {
+  text-align: center;
+
+  padding: 40px !important;
+
+  color: #5f5f5f !important;
+}
+
+/* ==========================================================
+   MESSAGE MANAGEMENT
+========================================================== */
+
+.message-management {
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  border-radius: 15px;
+
+  padding: 26px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.message-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.message-card {
+  background: #0d0d0d;
+
+  border-radius: 11px;
+
+  padding: 20px;
+
+  border: 1px solid #292929;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.message-card:hover {
+  border-color: rgba(245, 184, 0, 0.3);
+
+  transform: translateY(-2px);
+}
+
+.message-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 14px;
+}
+
+.message-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+.message-header p {
+  margin: 5px 0 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.message-text {
+  color: #b8b8b8;
+
+  line-height: 1.7;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   DELETE MESSAGE
+========================================================== */
+
+.delete-message {
+  background: transparent;
+
+  color: #ef4444;
+
+  border: 1px solid rgba(239, 68, 68, 0.3);
+
+  padding: 8px 15px;
+
+  border-radius: 7px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.delete-message:hover {
+  background: rgba(239, 68, 68, 0.1);
+
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.empty-state {
+  padding: 40px;
+
+  text-align: center;
+
+  color: #5f5f5f;
+
+  background: #0d0d0d;
+
+  border: 1px solid #292929;
+
+  border-radius: 11px;
+}
+
+/* ==========================================================
+   SETTINGS PAGE
+========================================================== */
+
+.settings-page {
+  animation: fadeUp 0.4s ease;
+}
+
+.settings-card {
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  border-radius: 15px;
+
+  padding: 28px;
+
+  max-width: 600px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.settings-card h3 {
+  margin-top: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+}
+
+.settings-card p {
+  color: #777777;
+
+  line-height: 1.7;
+}
+
+.settings-btn {
+  margin-top: 20px;
+
+  padding: 11px 21px;
+
+  border: 1px solid #c99700;
+
+  border-radius: 8px;
+
+  background: #f5b800;
+
+  color: #111111;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.settings-btn:hover {
+  background: #ffc928;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(245, 184, 0, 0.16);
+}
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   MANAGEMENT PAGE WRAPPERS
+========================================================== */
+
+.project-dashboard-section,
+.experience-dashboard-section,
+.resume-download-page,
+.analytics-wrapper {
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  border-radius: 15px;
+
+  padding: 26px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+  animation: fadeUp 0.4s ease;
+
+  max-width: 100%;
+}
+
+/* ==========================================================
+   PROJECT / EXPERIENCE TABLE SCROLL
+========================================================== */
+
+.project-wrapper,
+.experience-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  max-width: 100%;
+}
+
+.project-table,
+.experience-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+/* ==========================================================
+   RESUME DOWNLOAD
+========================================================== */
+
+.resume-download-page {
+  overflow-x: auto;
+}
+
+.resume-download-page table th,
+.resume-download-page table td {
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   ANALYTICS CONTAINER
+========================================================== */
+
+.analytics-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+/* ==========================================================
+   QUICK ACTIONS
+========================================================== */
+
+.quick-actions {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 16px;
+}
+
+.quick-btn {
+  min-height: 110px;
+
+  background: #111111;
+
+  border: 1px solid #292929;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quick-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(245, 184, 0, 0.4);
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.quick-btn span {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #b8b8b8;
+}
+
+.quick-btn.logout {
+  background: rgba(220, 38, 38, 0.08);
+
+  border-color: rgba(220, 38, 38, 0.25);
+
+  color: #ef4444;
+}
+
+.quick-btn.logout span {
+  color: #ef4444;
+}
+
+/* ==========================================================
+   LOGOUT MODAL
+========================================================== */
+
+.logout-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(4px);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.logout-modal {
+  width: 420px;
+
+  background: #111111;
+
+  border: 1px solid #353535;
+
+  border-radius: 16px;
+
+  padding: 32px;
+
+  text-align: center;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+
+  animation: fadeUp 0.3s ease;
+}
+
+.logout-icon {
+  font-size: 42px;
+
+  margin-bottom: 14px;
+}
+
+.logout-modal h2 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+.logout-modal p {
+  color: #777777;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+.logout-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+/* ==========================================================
+   LOGOUT BUTTONS
+========================================================== */
+
+.cancel-btn,
+.confirm-btn {
+  padding: 10px 22px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #1b1b1b;
+
+  color: #b8b8b8;
+
+  border: 1px solid #333333;
+}
+
+.cancel-btn:hover {
+  border-color: #555555;
+
+  color: #ffffff;
+}
+
+.confirm-btn {
+  background: #dc2626;
+
+  color: #ffffff;
+
+  border: 1px solid #dc2626;
+}
+
+.confirm-btn:hover {
+  background: #b91c1c;
+
+  border-color: #b91c1c;
+}
+
+/* ==========================================================
+   SCROLLBARS
+========================================================== */
+
+.admin-content::-webkit-scrollbar,
+.project-wrapper::-webkit-scrollbar,
+.experience-wrapper::-webkit-scrollbar,
+.table-wrapper::-webkit-scrollbar {
+  width: 7px;
+
+  height: 7px;
+}
+
+.admin-content::-webkit-scrollbar-track,
+.project-wrapper::-webkit-scrollbar-track,
+.experience-wrapper::-webkit-scrollbar-track,
+.table-wrapper::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+.admin-content::-webkit-scrollbar-thumb,
+.project-wrapper::-webkit-scrollbar-thumb,
+.experience-wrapper::-webkit-scrollbar-thumb,
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #353535;
+
+  border-radius: 20px;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover,
+.project-wrapper::-webkit-scrollbar-thumb:hover,
+.experience-wrapper::-webkit-scrollbar-thumb:hover,
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #c99700;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1200px) {
+  .admin-sidebar {
+    width: 240px;
+  }
+
+  .admin-main {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+  }
+
+  .header-search {
+    width: 250px;
+  }
+}
+
+/* ==========================================================
+   SMALL LAPTOP / TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+  .admin-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .header-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    border-right: none;
+
+    border-bottom: 1px solid #292929;
+
+    padding: 18px;
+  }
+
+  .admin-logo {
+    margin-bottom: 20px;
+  }
+
+  .sidebar-menu {
+    gap: 5px;
+  }
+
+  .admin-main {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-search {
+    width: 100%;
+  }
+
+  .message-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .dashboard-section,
+  .message-management,
+  .project-dashboard-section,
+  .experience-dashboard-section,
+  .resume-download-page,
+  .analytics-wrapper {
+    padding: 20px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+  .admin-main {
+    padding: 14px;
+  }
+
+  .admin-content h1 {
+    font-size: 25px;
+  }
+
+  .analytics-card {
+    padding: 18px;
+  }
+
+  .analytics-card h1,
+  .analytics-card h3 {
+    font-size: 26px;
+  }
+
+  .analytics-icon {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 20px;
+  }
+
+  .logout-modal {
+    width: calc(100% - 30px);
+
+    padding: 25px;
+  }
+
+  .logout-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    width: 100%;
+  }
+}

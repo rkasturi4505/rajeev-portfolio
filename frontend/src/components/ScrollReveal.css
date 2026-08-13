@@ -1,0 +1,126 @@
+/* ==========================================================
+   SCROLL REVEAL
+   Premium Enterprise Animation
+========================================================== */
+
+.scroll-reveal {
+  opacity: 0;
+
+  transform:
+    translateY(70px)
+    scale(0.98);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  will-change:
+    opacity,
+    transform;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+
+/* ==========================================================
+   VISIBLE
+========================================================== */
+
+.scroll-reveal.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  will-change: auto;
+}
+
+
+/* ==========================================================
+   STAGGER SUPPORT
+========================================================== */
+
+.scroll-reveal > * {
+  transition: inherit;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+  .scroll-reveal {
+    transform:
+      translateY(40px)
+      scale(0.99);
+
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+
+  .scroll-reveal {
+    transform:
+      translateY(30px)
+      scale(0.995);
+
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .scroll-reveal,
+  .scroll-reveal.visible {
+
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+
+    will-change: auto;
+  }
+
+  .scroll-reveal > * {
+    transition: none;
+  }
+}
+
+
+/* ==========================================================
+   GPU OPTIMIZATION
+========================================================== */
+
+.scroll-reveal {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

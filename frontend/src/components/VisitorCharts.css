@@ -1,0 +1,409 @@
+/* ==========================================================
+   VISITOR CHARTS
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+.visitor-chart-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+
+  gap: 22px;
+
+  margin-top: 24px;
+}
+
+/* ==========================================================
+   CHART CARD
+========================================================== */
+
+.visitor-chart-grid .chart-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #111827 0%, #0b0f14 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ==========================================================
+   GOLD TOP ACCENT
+========================================================== */
+
+.visitor-chart-grid .chart-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+
+  opacity: 0.65;
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.visitor-chart-grid .chart-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.38),
+    0 0 25px rgba(212, 175, 55, 0.05);
+}
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.visitor-chart-grid .chart-card h3 {
+  margin: 0 0 22px;
+
+  color: #d4af37;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================================
+   CHART AREA
+========================================================== */
+
+.visitor-chart-grid .chart-container {
+  width: 100%;
+
+  min-height: 300px;
+
+  position: relative;
+}
+
+/* ==========================================================
+   RECHARTS CONTAINER
+========================================================== */
+
+.visitor-chart-grid .recharts-responsive-container {
+  width: 100% !important;
+}
+
+/* ==========================================================
+   RECHARTS SVG
+========================================================== */
+
+.visitor-chart-grid .recharts-wrapper {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ==========================================================
+   CHART AXIS
+========================================================== */
+
+.visitor-chart-grid .recharts-cartesian-axis-tick-value {
+  fill: #94a3b8;
+
+  font-size: 12px;
+}
+
+.visitor-chart-grid .recharts-cartesian-axis-line,
+.visitor-chart-grid .recharts-cartesian-axis-tick-line {
+  stroke: #334155;
+}
+
+/* ==========================================================
+   GRID LINES
+========================================================== */
+
+.visitor-chart-grid .recharts-cartesian-grid line {
+  stroke: rgba(148, 163, 184, 0.1);
+}
+
+/* ==========================================================
+   TOOLTIP
+========================================================== */
+
+.visitor-chart-grid .recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.visitor-chart-grid .recharts-default-tooltip {
+  background: linear-gradient(145deg, #111827, #090d12) !important;
+
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+
+  border-radius: 10px !important;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+
+  padding: 10px 13px !important;
+}
+
+.visitor-chart-grid .recharts-tooltip-label {
+  color: #d4af37 !important;
+
+  font-weight: 700;
+}
+
+.visitor-chart-grid .recharts-tooltip-item {
+  color: #f8fafc !important;
+}
+
+.visitor-chart-grid .recharts-tooltip-item-name {
+  color: #94a3b8 !important;
+}
+
+.visitor-chart-grid .recharts-tooltip-item-value {
+  color: #f8fafc !important;
+
+  font-weight: 600;
+}
+
+/* ==========================================================
+   LEGEND
+========================================================== */
+
+.visitor-chart-grid .recharts-legend-wrapper {
+  padding-top: 12px;
+}
+
+.visitor-chart-grid .recharts-default-legend {
+  margin: 0;
+}
+
+.visitor-chart-grid .recharts-legend-item-text {
+  color: #cbd5e1 !important;
+
+  font-size: 12px;
+}
+
+/* ==========================================================
+   LINE CHART
+========================================================== */
+
+.visitor-chart-grid .recharts-line-curve {
+  stroke: #d4af37;
+}
+
+.visitor-chart-grid .recharts-line-dot {
+  stroke: #d4af37;
+}
+
+/* ==========================================================
+   BAR CHART
+========================================================== */
+
+.visitor-chart-grid .recharts-bar-rectangle {
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.visitor-chart-grid .recharts-bar-rectangle:hover {
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.35));
+}
+
+/* ==========================================================
+   PIE / DONUT LABEL
+========================================================== */
+
+.visitor-chart-grid .recharts-pie-label-text {
+  fill: #cbd5e1;
+
+  font-size: 12px;
+}
+
+/* ==========================================================
+   EMPTY CHART STATE
+========================================================== */
+
+.visitor-chart-grid .chart-empty {
+  min-height: 280px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+/* ==========================================================
+   GLOBAL BOX SIZING
+========================================================== */
+
+.visitor-chart-grid *,
+.visitor-chart-grid *::before,
+.visitor-chart-grid *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   RESPONSIVE — 1200px
+========================================================== */
+
+@media (max-width: 1200px) {
+  .visitor-chart-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .visitor-chart-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .visitor-chart-grid .chart-card {
+    padding: 22px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .visitor-chart-grid {
+    gap: 18px;
+
+    margin-top: 20px;
+  }
+
+  .visitor-chart-grid .chart-card {
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .visitor-chart-grid .chart-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 18px;
+  }
+
+  .visitor-chart-grid .chart-container {
+    min-height: 260px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 480px
+========================================================== */
+
+@media (max-width: 480px) {
+  .visitor-chart-grid {
+    gap: 15px;
+  }
+
+  .visitor-chart-grid .chart-card {
+    padding: 16px;
+
+    border-radius: 15px;
+  }
+
+  .visitor-chart-grid .chart-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 16px;
+  }
+
+  .visitor-chart-grid .chart-container {
+    min-height: 230px;
+  }
+
+  .visitor-chart-grid .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+
+  .visitor-chart-grid .recharts-legend-item-text {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .visitor-chart-grid *,
+  .visitor-chart-grid *::before,
+  .visitor-chart-grid *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .visitor-chart-grid .chart-card {
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
+
+  .visitor-chart-grid .chart-card h3 {
+    color: #111827;
+  }
+
+  .visitor-chart-grid .recharts-cartesian-axis-tick-value {
+    fill: #475569;
+  }
+
+  .visitor-chart-grid .recharts-cartesian-grid line {
+    stroke: #d1d5db;
+  }
+
+  .visitor-chart-grid .chart-card::before {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

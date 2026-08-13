@@ -1,0 +1,792 @@
+/* ==========================================================
+   ABOUT SECTION
+   Premium Enterprise Black + Gold
+   Senior Java Developer Portfolio
+   ========================================================== */
+
+.about-container {
+  position: relative;
+
+  width: min(1280px, calc(100% - 48px));
+
+  margin: 80px auto 100px;
+
+  padding: 72px 60px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(212, 175, 55, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 5% 95%,
+      rgba(212, 175, 55, 0.04),
+      transparent 30%
+    ),
+    #0f1014;
+
+  border: 1px solid #292b31;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   DECORATIVE BACKGROUND
+   ========================================================== */
+
+.about-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 460px;
+  height: 460px;
+
+  top: -240px;
+  right: -150px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent 70%);
+
+  pointer-events: none;
+}
+
+.about-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  bottom: -170px;
+  left: -120px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.055),
+    transparent 72%
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   CONTENT LAYER
+   ========================================================== */
+
+.about-container > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.about-header {
+  text-align: center;
+
+  max-width: 960px;
+
+  margin: 0 auto 50px;
+}
+
+/* ==========================================================
+   ABOUT EYEBROW
+   ========================================================== */
+
+.about-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 18px;
+
+  margin-bottom: 20px;
+
+  border-radius: 30px;
+
+  background: rgba(212, 175, 55, 0.07);
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  color: #d4af37;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   HEADER TITLE
+   ========================================================== */
+
+.about-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 40px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+/* ==========================================================
+   GOLD TITLE
+   ========================================================== */
+
+.about-header h2 span {
+  color: #d4af37;
+}
+
+/* ==========================================================
+   DESCRIPTION
+   ========================================================== */
+
+.about-description {
+  max-width: 880px;
+
+  margin: 24px auto 0;
+
+  color: #aeb1b7;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+
+  text-align: center;
+}
+
+/* ==========================================================
+   FEATURE GRID
+   ========================================================== */
+
+.about-features {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 44px;
+}
+
+/* ==========================================================
+   FEATURE CARD
+   ========================================================== */
+
+.feature-card {
+  min-height: 255px;
+
+  padding: 27px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: linear-gradient(
+    145deg,
+    rgba(20, 21, 27, 0.98),
+    rgba(15, 16, 20, 0.98)
+  );
+
+  border: 1px solid #292b31;
+
+  border-radius: 15px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+/* ==========================================================
+   FEATURE CARD HOVER
+   ========================================================== */
+
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  background: linear-gradient(145deg, #17191f, #121318);
+
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================
+   FEATURE ICON
+   ========================================================== */
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 19px;
+
+  border-radius: 12px;
+
+  background: rgba(212, 175, 55, 0.08);
+
+  border: 1px solid rgba(212, 175, 55, 0.23);
+
+  color: #d4af37;
+
+  font-size: 22px;
+
+  transition:
+    background 0.28s ease,
+    border-color 0.28s ease,
+    transform 0.28s ease;
+}
+
+/* ==========================================================
+   FEATURE ICON HOVER
+   ========================================================== */
+
+.feature-card:hover .feature-icon {
+  background: rgba(212, 175, 55, 0.13);
+
+  border-color: rgba(212, 175, 55, 0.4);
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   FEATURE CONTENT
+   ========================================================== */
+
+.feature-content {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+/* ==========================================================
+   FEATURE TITLE
+   ========================================================== */
+
+.feature-card h3 {
+  margin: 0 0 11px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+/* ==========================================================
+   FEATURE DESCRIPTION
+   ========================================================== */
+
+.feature-card p {
+  margin: 0;
+
+  color: #9fa3aa;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+/* ==========================================================
+   HIGHLIGHTS
+   ========================================================== */
+
+.about-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 44px;
+}
+
+/* ==========================================================
+   HIGHLIGHT ITEM
+   ========================================================== */
+
+.about-highlights .highlight-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 50px;
+
+  padding: 12px 15px;
+
+  border-radius: 9px;
+
+  background: #121318;
+
+  border: 1px solid #292b31;
+
+  color: #d3d5da;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ==========================================================
+   HIGHLIGHT ICON
+   ========================================================== */
+
+.about-highlights .highlight-item svg {
+  flex-shrink: 0;
+
+  color: #d4af37;
+
+  font-size: 14px;
+}
+
+/* ==========================================================
+   HIGHLIGHT HOVER
+   ========================================================== */
+
+.about-highlights .highlight-item:hover {
+  transform: translateY(-3px);
+
+  background: #16181e;
+
+  border-color: rgba(212, 175, 55, 0.35);
+
+  color: #ffffff;
+}
+
+.about-highlights .highlight-item:hover svg {
+  color: #f3d36a;
+}
+
+/* ==========================================================
+   STATS
+   ========================================================== */
+
+.about-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top: 48px;
+}
+
+/* ==========================================================
+   STAT CARD
+   ========================================================== */
+
+.about-stat-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 120px;
+
+  padding: 24px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border-radius: 13px;
+
+  background: linear-gradient(145deg, #14151a, #101115);
+
+  border: 1px solid #292b31;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+/* ==========================================================
+   STAT DECORATION
+   ========================================================== */
+
+.about-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  top: -95px;
+  right: -65px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.09),
+    transparent 70%
+  );
+}
+
+.about-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  bottom: -55px;
+  left: -35px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.04),
+    transparent 70%
+  );
+}
+
+/* ==========================================================
+   STAT CONTENT
+   ========================================================== */
+
+.about-stat-card > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* ==========================================================
+   STAT HOVER
+   ========================================================== */
+
+.about-stat-card:hover {
+  transform: translateY(-5px);
+
+  background: #17191f;
+
+  border-color: rgba(212, 175, 55, 0.38);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* ==========================================================
+   STAT VALUE
+   ========================================================== */
+
+.about-stat-card h3 {
+  margin: 0 0 7px;
+
+  color: #d4af37;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================================
+   STAT LABEL
+   ========================================================== */
+
+.about-stat-card span {
+  display: block;
+
+  color: #aeb1b7;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+/* ==========================================================
+   PERFORMANCE
+   ========================================================== */
+
+.feature-card,
+.about-highlights .highlight-item,
+.about-stat-card {
+  will-change: transform;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .about-container {
+    width: calc(100% - 48px);
+
+    margin: 70px auto 90px;
+
+    padding: 60px 45px;
+  }
+
+  .about-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================== */
+
+@media (max-width: 850px) {
+  .about-container {
+    padding: 55px 35px;
+  }
+
+  .about-header h2 {
+    font-size: 34px;
+  }
+
+  .about-description {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+  .about-container {
+    width: calc(100% - 36px);
+
+    margin: 55px auto 70px;
+
+    padding: 48px 28px;
+
+    border-radius: 22px;
+  }
+
+  .about-header {
+    margin-bottom: 38px;
+  }
+
+  .about-header h2 {
+    font-size: 30px;
+
+    line-height: 1.3;
+  }
+
+  .about-description {
+    margin-top: 19px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    margin-top: 36px;
+  }
+
+  .feature-card {
+    min-height: auto;
+
+    padding: 25px 23px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+
+    gap: 11px;
+
+    margin-top: 38px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-top: 40px;
+  }
+
+  .about-stat-card {
+    min-height: 115px;
+
+    padding: 23px 14px;
+  }
+
+  .about-stat-card h3 {
+    font-size: 29px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .about-container {
+    width: calc(100% - 24px);
+
+    margin: 45px auto 60px;
+
+    padding: 38px 18px;
+
+    border-radius: 20px;
+  }
+
+  .about-eyebrow {
+    padding: 7px 15px;
+
+    margin-bottom: 17px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .about-header {
+    margin-bottom: 30px;
+  }
+
+  .about-header h2 {
+    font-size: 26px;
+
+    line-height: 1.35;
+  }
+
+  .about-description {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .feature-card {
+    padding: 22px 19px;
+
+    border-radius: 14px;
+  }
+
+  .feature-icon {
+    width: 53px;
+    height: 53px;
+
+    margin-bottom: 16px;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 17px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .about-highlights .highlight-item {
+    min-height: 49px;
+
+    padding: 11px 13px;
+
+    font-size: 11px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+
+    gap: 11px;
+  }
+
+  .about-stat-card {
+    min-height: 102px;
+  }
+
+  .about-stat-card h3 {
+    font-size: 29px;
+  }
+
+  .about-stat-card span {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-icon,
+  .about-highlights .highlight-item,
+  .about-stat-card {
+    transition: none !important;
+  }
+}

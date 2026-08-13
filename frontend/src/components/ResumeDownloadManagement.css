@@ -1,0 +1,591 @@
+/* ==========================================================
+   RESUME DOWNLOAD MANAGEMENT
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+.resume-download-management {
+  width: 100%;
+
+  color: #e5e7eb;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.resume-download-management .section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.resume-download-management .section-header h2 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 750;
+
+  color: #f8fafc;
+
+  letter-spacing: -0.4px;
+}
+
+.resume-download-management .section-header p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+/* ==========================================================
+   REFRESH BUTTON
+========================================================== */
+
+.resume-download-management .refresh-btn {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+
+  padding: 11px 18px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resume-download-management .refresh-btn:hover {
+  background: rgba(212, 175, 55, 0.18);
+
+  border-color: rgba(212, 175, 55, 0.7);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.12);
+}
+
+/* ==========================================================
+   SUMMARY CARD
+========================================================== */
+
+.resume-download-management .download-summary-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  background: linear-gradient(145deg, #111827 0%, #0f172a 100%);
+
+  padding: 22px;
+
+  border-radius: 17px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(212, 175, 55, 0.22);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.resume-download-management .download-summary-card:hover {
+  border-color: rgba(212, 175, 55, 0.38);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================
+   SUMMARY ICON
+========================================================== */
+
+.resume-download-management .summary-icon {
+  width: 58px;
+
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 27px;
+
+  background: rgba(212, 175, 55, 0.1);
+
+  color: #d4af37;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================
+   SUMMARY TEXT
+========================================================== */
+
+.resume-download-management .download-summary-card h3 {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #94a3b8;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+}
+
+.resume-download-management .download-summary-card strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 29px;
+
+  font-weight: 750;
+
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   TABLE CARD
+========================================================== */
+
+.resume-download-management .resume-download-card {
+  background: linear-gradient(145deg, #111827 0%, #0f172a 100%);
+
+  padding: 26px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(212, 175, 55, 0.22);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.resume-download-management .resume-download-card:hover {
+  border-color: rgba(212, 175, 55, 0.34);
+
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.33);
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.resume-download-management .table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.resume-download-management .table-header h3 {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+.resume-download-management .table-header p {
+  margin: 6px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.resume-download-management .download-search {
+  width: 270px;
+
+  padding: 12px 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+
+  background: #0b1220;
+
+  color: #f8fafc;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.resume-download-management .download-search::placeholder {
+  color: #64748b;
+}
+
+.resume-download-management .download-search:hover {
+  border-color: #475569;
+}
+
+.resume-download-management .download-search:focus {
+  border-color: #d4af37;
+
+  background: #0f172a;
+
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.resume-download-management .table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border-radius: 14px;
+
+  border: 1px solid #263244;
+
+  background: #0b1220;
+}
+
+.resume-download-management .table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.resume-download-management .table-wrapper::-webkit-scrollbar-thumb {
+  background: #475569;
+
+  border-radius: 999px;
+}
+
+.resume-download-management .table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.resume-download-management .table-wrapper::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.resume-download-management .dashboard-table {
+  width: 100%;
+
+  min-width: 700px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.resume-download-management .dashboard-table thead {
+  background: #050b14;
+}
+
+.resume-download-management .dashboard-table th {
+  padding: 16px 18px;
+
+  text-align: left;
+
+  color: #d4af37;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.resume-download-management .dashboard-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.resume-download-management .dashboard-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.resume-download-management .dashboard-table td {
+  padding: 16px 18px;
+
+  border-bottom: 1px solid #1e293b;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  background: #0f172a;
+}
+
+.resume-download-management .dashboard-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.resume-download-management .dashboard-table tbody tr:nth-child(even) td {
+  background: #111827;
+}
+
+.resume-download-management .dashboard-table tbody tr:hover td {
+  background: #182235;
+}
+
+/* ==========================================================
+   DATE STYLE
+========================================================== */
+
+.resume-download-management .download-date {
+  color: #d4af37;
+
+  font-weight: 600;
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.resume-download-management .loading-container {
+  text-align: center;
+
+  padding: 60px 20px;
+
+  background: #0f172a;
+}
+
+.resume-download-management .loader {
+  width: 42px;
+
+  height: 42px;
+
+  border: 4px solid #334155;
+
+  border-top-color: #d4af37;
+
+  border-radius: 50%;
+
+  margin: auto;
+
+  animation: resumeDownloadSpin 0.8s linear infinite;
+}
+
+@keyframes resumeDownloadSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.resume-download-management .error-container {
+  text-align: center;
+
+  padding: 50px 20px;
+
+  background: #0f172a;
+}
+
+.resume-download-management .error-container h3 {
+  margin-bottom: 10px;
+
+  color: #f87171;
+}
+
+.resume-download-management .error-container p {
+  color: #94a3b8;
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.resume-download-management .empty-row {
+  text-align: center;
+
+  padding: 50px !important;
+
+  color: #64748b;
+
+  background: #0f172a !important;
+}
+
+.resume-download-management .empty-row h3 {
+  margin: 0 0 8px;
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+}
+
+.resume-download-management .empty-row p {
+  margin: 0;
+
+  color: #64748b;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.resume-download-management input:focus-visible,
+.resume-download-management button:focus-visible {
+  outline: 2px solid #d4af37;
+
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 768px) {
+  .resume-download-management .section-header,
+  .resume-download-management .table-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .resume-download-management .section-header h2 {
+    font-size: 27px;
+  }
+
+  .resume-download-management .refresh-btn {
+    width: fit-content;
+  }
+
+  .resume-download-management .download-search {
+    width: 100%;
+  }
+
+  .resume-download-management .resume-download-card {
+    padding: 20px;
+  }
+
+  .resume-download-management .dashboard-table {
+    min-width: 650px;
+  }
+}
+
+@media (max-width: 576px) {
+  .resume-download-management .download-summary-card {
+    padding: 18px;
+  }
+
+  .resume-download-management .summary-icon {
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 23px;
+  }
+
+  .resume-download-management .download-summary-card strong {
+    font-size: 25px;
+  }
+
+  .resume-download-management .resume-download-card {
+    padding: 16px;
+
+    border-radius: 16px;
+  }
+
+  .resume-download-management .dashboard-table th,
+  .resume-download-management .dashboard-table td {
+    padding: 13px 14px;
+
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .resume-download-management .refresh-btn,
+  .resume-download-management .download-search {
+    display: none;
+  }
+
+  .resume-download-management .resume-download-card,
+  .resume-download-management .download-summary-card {
+    box-shadow: none;
+
+    border: 1px solid #ccc;
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

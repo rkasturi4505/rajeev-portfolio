@@ -1,0 +1,834 @@
+/* ==========================================================
+   PROJECT MANAGEMENT
+   Premium Enterprise Black + Gold Admin UI
+========================================================== */
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+.project-management {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0 0 25px;
+  margin: 0;
+  transform: translateY(-20px);
+  color: #e5e7eb;
+}
+
+.project-management *,
+.project-management *::before,
+.project-management *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.project-management .management-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.project-management .management-header h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 34px;
+  font-weight: 750;
+  color: #111827;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.project-management .management-header p {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   FORM CARD
+========================================================== */
+
+.project-management .project-card {
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid #d6b15e;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.09),
+    0 2px 0 rgba(214, 177, 94, 0.12);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  animation: adminProjectFadeIn 0.35s ease;
+}
+
+.project-management .project-card:hover {
+  border-color: #b8943e;
+  box-shadow:
+    0 24px 55px rgba(15, 23, 42, 0.13),
+    0 2px 0 rgba(214, 177, 94, 0.2);
+}
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.project-management .project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.project-management .project-title-row h2 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 750;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+/* ==========================================================
+   MODE BADGES
+========================================================== */
+
+.project-management .add-mode,
+.project-management .edit-mode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 17px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+}
+
+.project-management .add-mode {
+  background: #f8f1dc;
+  color: #9a7625;
+  border-color: #e5c978;
+}
+
+.project-management .edit-mode {
+  background: #fff7df;
+  color: #9a7625;
+  border-color: #d6b15e;
+}
+
+/* ==========================================================
+   FORM GRID
+========================================================== */
+
+.project-management .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.project-management input,
+.project-management textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-management input::placeholder,
+.project-management textarea::placeholder {
+  color: #94a3b8;
+}
+
+.project-management input:hover,
+.project-management textarea:hover {
+  border-color: #a8b2c1;
+}
+
+.project-management input:focus,
+.project-management textarea:focus {
+  border-color: #c9a84e;
+  box-shadow: 0 0 0 3px rgba(201, 168, 78, 0.16);
+}
+
+.project-management textarea {
+  resize: vertical;
+  min-height: 170px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+
+.project-management .full-width-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   ACTION ROW
+========================================================== */
+
+.project-management .project-action-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.project-management .project-action-row .save-project-btn {
+  flex: 1;
+}
+
+/* ==========================================================
+   SAVE BUTTON
+========================================================== */
+
+.project-management .save-project-btn {
+  border: 1px solid #c9a84e;
+  border-radius: 11px;
+  padding: 15px 20px;
+
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+
+  color: #f8e7ad;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-management .save-project-btn:hover {
+  background: linear-gradient(135deg, #111827 0%, #030712 100%);
+
+  color: #ffe9a6;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 32px rgba(15, 23, 42, 0.24),
+    0 0 0 1px rgba(214, 177, 94, 0.2);
+}
+
+.project-management .save-project-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================
+   CANCEL BUTTON
+========================================================== */
+
+.project-management .cancel-btn {
+  min-width: 170px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 11px;
+
+  background: #f8fafc;
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-management .cancel-btn:hover {
+  background: #f1f5f9;
+  border-color: #b8943e;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   PROJECT LIST CARD
+========================================================== */
+
+.project-management .project-list-card {
+  width: 100%;
+
+  background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+
+  border: 1px solid #d6b15e;
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.09),
+    0 2px 0 rgba(214, 177, 94, 0.12);
+
+  animation: adminProjectFadeIn 0.45s ease;
+}
+
+/* ==========================================================
+   LIST HEADER
+========================================================== */
+
+.project-management .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.project-management .project-header h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 750;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+.project-management .project-count {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.project-management .search-project {
+  width: 320px;
+  max-width: 100%;
+
+  padding: 13px 17px;
+
+  border-radius: 11px;
+  border: 1px solid #cbd5e1;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-management .search-project:hover {
+  border-color: #a8b2c1;
+}
+
+.project-management .search-project:focus {
+  border-color: #c9a84e;
+  box-shadow: 0 0 0 3px rgba(201, 168, 78, 0.15);
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.project-management .project-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  border-radius: 13px;
+
+  border: 1px solid #e2e8f0;
+}
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+.project-management .project-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 9px;
+}
+
+.project-management .project-wrapper::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+.project-management .project-wrapper::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 999px;
+}
+
+.project-management .project-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.project-management .project-table {
+  width: max-content;
+  min-width: max(1800px, 100%);
+
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.project-management .project-table thead {
+  background: linear-gradient(135deg, #111827 0%, #030712 100%);
+}
+
+.project-management .project-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  padding: 17px 18px;
+
+  color: #f8e7ad;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #b8943e;
+
+  letter-spacing: 0.25px;
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.project-management .project-table tbody td {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-management .project-table tbody tr {
+  background: #ffffff;
+
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-management .project-table tbody tr:nth-child(even) {
+  background: #fcfcfd;
+}
+
+.project-management .project-table tbody tr:hover {
+  background: #fffaf0;
+}
+
+/* ==========================================================
+   DESCRIPTION COLUMN
+========================================================== */
+
+.project-management .description-column {
+  min-width: 360px;
+  max-width: 500px;
+
+  white-space: normal;
+
+  line-height: 1.7;
+
+  word-break: break-word;
+
+  color: #475569;
+}
+
+/* ==========================================================
+   ACTION COLUMN
+========================================================== */
+
+.project-management .project-table td:last-child {
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.project-management .edit-btn,
+.project-management .delete-btn {
+  min-width: 90px;
+
+  border: none;
+  border-radius: 9px;
+
+  padding: 9px 15px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* ==========================================================
+   EDIT
+========================================================== */
+
+.project-management .edit-btn {
+  background: linear-gradient(135deg, #1f2937, #111827);
+
+  color: #f8e7ad;
+
+  border: 1px solid #b8943e;
+
+  margin-right: 10px;
+}
+
+.project-management .edit-btn:hover {
+  background: linear-gradient(135deg, #111827, #030712);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+}
+
+/* ==========================================================
+   DELETE
+========================================================== */
+
+.project-management .delete-btn {
+  background: #991b1b;
+  border: 1px solid #b91c1c;
+}
+
+.project-management .delete-btn:hover {
+  background: #7f1d1d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(127, 29, 29, 0.2);
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.project-management .loading-container {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.project-management .loader {
+  width: 50px;
+  height: 50px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  border: 4px solid #e5e7eb;
+  border-top-color: #c9a84e;
+
+  animation: projectSpin 0.8s linear infinite;
+}
+
+.project-management .loading-container p {
+  margin-top: 18px;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+@keyframes projectSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.project-management .error-container {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.project-management .error-container h3 {
+  margin-bottom: 12px;
+  color: #dc2626;
+}
+
+.project-management .error-container p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.project-management .error-container .save-project-btn {
+  width: 220px;
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.project-management .empty-state {
+  text-align: center;
+
+  padding: 70px !important;
+
+  color: #64748b;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.project-management input:focus-visible,
+.project-management textarea:focus-visible,
+.project-management button:focus-visible {
+  outline: 3px solid rgba(201, 168, 78, 0.28);
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   RESPONSIVE — 1200px
+========================================================== */
+
+@media (max-width: 1200px) {
+  .project-management .project-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+
+  .project-management .project-table {
+    min-width: 1600px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .project-management .project-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .project-management .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-management .project-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-management .search-project {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .project-management .project-card,
+  .project-management .project-list-card {
+    padding: 22px;
+  }
+
+  .project-management .project-title-row h2 {
+    font-size: 26px;
+  }
+
+  .project-management .management-header h2 {
+    font-size: 30px;
+  }
+
+  .project-management .project-header h2 {
+    font-size: 24px;
+  }
+
+  .project-management .project-action-row {
+    flex-direction: column;
+  }
+
+  .project-management .save-project-btn,
+  .project-management .cancel-btn {
+    width: 100%;
+  }
+
+  .project-management .cancel-btn {
+    min-width: unset;
+    padding: 15px;
+  }
+
+  .project-management .project-table th,
+  .project-management .project-table td {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .project-management .project-table td:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-management .edit-btn,
+  .project-management .delete-btn {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — 576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .project-management {
+    transform: translateY(-10px);
+  }
+
+  .project-management .management-header h2 {
+    font-size: 26px;
+  }
+
+  .project-management .project-title-row h2 {
+    font-size: 22px;
+  }
+
+  .project-management .project-header h2 {
+    font-size: 20px;
+  }
+
+  .project-management .project-card,
+  .project-management .project-list-card {
+    padding: 18px;
+    border-radius: 17px;
+  }
+
+  .project-management input,
+  .project-management textarea {
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+
+  .project-management textarea {
+    min-height: 140px;
+  }
+
+  .project-management .save-project-btn,
+  .project-management .cancel-btn {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+  .project-management .project-action-row,
+  .project-management .edit-btn,
+  .project-management .delete-btn,
+  .project-management .search-project {
+    display: none;
+  }
+
+  .project-management {
+    transform: none;
+  }
+}
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes adminProjectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
