@@ -184,7 +184,7 @@ function Hero({ profile }: Props) {
 
           <div className="hero-buttons">
             <motion.a
-              href="/Resume.pdf"
+              href="/RAJEEV_KUMAR_KASTURI_RESUME.pdf"
               download
               className="primary-btn"
               onClick={handleResumeDownload}
