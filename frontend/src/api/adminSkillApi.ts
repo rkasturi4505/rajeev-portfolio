@@ -1,41 +1,42 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const API_URL = "/api/skills";
 
-const API_URL = `${API_BASE_URL}/api/skills`;
+// ==========================================================
+// GET SKILLS
+// ADMIN
+// ==========================================================
 
-const getAuthHeaders = () => {
-  const token = localStorage.getItem("token");
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
+export const getSkills = () => {
+  return api.get(API_URL);
 };
 
-export const getSkills = () => 
-  axios.get(API_URL);
+// ==========================================================
+// ADD SKILL
+// ADMIN
+// ==========================================================
 
-export const addSkill = (skill: any) =>
-  axios.post(
-    API_URL,
-    skill,
-    getAuthHeaders()
-  );
+export const addSkill = (skill: any) => {
+  return api.post(API_URL, skill);
+};
+
+// ==========================================================
+// UPDATE SKILL
+// ADMIN
+// ==========================================================
 
 export const updateSkill = (
   id: number,
   skill: any
-) =>
-  axios.put(
-    `${API_URL}/${id}`,
-    skill,
-    getAuthHeaders()
-  );
+) => {
+  return api.put(`${API_URL}/${id}`, skill);
+};
 
-export const deleteSkill = (id: number) =>
-  axios.delete(
-    `${API_URL}/${id}`,
-    getAuthHeaders()
-  );
+// ==========================================================
+// DELETE SKILL
+// ADMIN
+// ==========================================================
+
+export const deleteSkill = (id: number) => {
+  return api.delete(`${API_URL}/${id}`);
+};

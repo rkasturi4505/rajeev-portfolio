@@ -4,41 +4,54 @@ import { API_BASE_URL } from "../config/apiConfig";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
-let isRedirecting = false;
+// ==========================================================
+// REQUEST INTERCEPTOR
+// Automatically attaches JWT token
+// ==========================================================
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+    if (token) {
+      config.headers = config.headers || {};
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
   }
+);
 
-  return config;
-});
+// ==========================================================
+// RESPONSE INTERCEPTOR
+// Handles expired / invalid JWT
+// ==========================================================
 
 api.interceptors.response.use(
-  (response) => response,
-
+  (response) => {
+    return response;
+  },
   (error) => {
-    if (
-      error.response &&
-      (error.response.status === 401 || error.response.status === 403)
-    ) {
+
+    if (error.response?.status === 401) {
+
       localStorage.removeItem("token");
 
-      if (!isRedirecting && window.location.pathname.startsWith("/admin")) {
-        isRedirecting = true;
-
-        alert("Session expired. Please login again.");
-
-        window.location.replace("/admin/login");
+      if (!window.location.pathname.includes("/admin/login")) {
+        window.location.href = "/admin/login";
       }
     }
 
     return Promise.reject(error);
-  },
+  }
 );
 
 export default api;

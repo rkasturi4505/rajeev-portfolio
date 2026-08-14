@@ -1,47 +1,54 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+// ==========================================================
+// VISITOR SESSION API
+// ==========================================================
 
-const API_URL = `${API_BASE_URL}/api/visitor-sessions`;
+const API_URL = "/api/visitor-sessions";
 
 // ==========================================================
 // GET ALL VISITOR SESSIONS
+// ADMIN ONLY
 // ==========================================================
 
 export const getVisitorSessions = () => {
-  return axios.get(API_URL);
+  return api.get(API_URL);
 };
 
 // ==========================================================
 // GET VISITOR SESSION BY ID
+// ADMIN ONLY
 // ==========================================================
 
 export const getVisitorSessionById = (id: number) => {
-  return axios.get(`${API_URL}/${id}`);
+  return api.get(`${API_URL}/${id}`);
 };
 
 // ==========================================================
 // CREATE VISITOR SESSION
+// PUBLIC
 // ==========================================================
 
 export const createVisitorSession = (data: any) => {
-  return axios.post(API_URL, data);
+  return api.post(API_URL, data);
 };
 
 // ==========================================================
 // DELETE VISITOR SESSION
+// ADMIN ONLY
 // ==========================================================
 
 export const deleteVisitorSession = (id: number) => {
-  return axios.delete(`${API_URL}/${id}`);
+  return api.delete(`${API_URL}/${id}`);
 };
 
 // ==========================================================
 // SEARCH BY VISITOR NAME
+// ADMIN ONLY
 // ==========================================================
 
 export const searchVisitorSessions = (name: string) => {
-  return axios.get(`${API_URL}/search`, {
+  return api.get(`${API_URL}/search`, {
     params: {
       name,
     },
@@ -50,10 +57,11 @@ export const searchVisitorSessions = (name: string) => {
 
 // ==========================================================
 // SEARCH BY COMPANY
+// ADMIN ONLY
 // ==========================================================
 
 export const searchVisitorSessionsByCompany = (company: string) => {
-  return axios.get(`${API_URL}/company`, {
+  return api.get(`${API_URL}/company`, {
     params: {
       company,
     },
@@ -62,10 +70,14 @@ export const searchVisitorSessionsByCompany = (company: string) => {
 
 // ==========================================================
 // DATE FILTER
+// ADMIN ONLY
 // ==========================================================
 
-export const getVisitorSessionsBetween = (start: string, end: string) => {
-  return axios.get(`${API_URL}/between`, {
+export const getVisitorSessionsBetween = (
+  start: string,
+  end: string
+) => {
+  return api.get(`${API_URL}/between`, {
     params: {
       start,
       end,
@@ -75,10 +87,14 @@ export const getVisitorSessionsBetween = (start: string, end: string) => {
 
 // ==========================================================
 // COUNT VISITS
+// ADMIN ONLY
 // ==========================================================
 
-export const countVisitorSessionsBetween = (start: string, end: string) => {
-  return axios.get(`${API_URL}/count`, {
+export const countVisitorSessionsBetween = (
+  start: string,
+  end: string
+) => {
+  return api.get(`${API_URL}/count`, {
     params: {
       start,
       end,

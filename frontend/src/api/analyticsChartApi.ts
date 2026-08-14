@@ -10,7 +10,11 @@ export interface ChartResponse {
 // ==========================================================
 
 export const getVisitorTrend = async (): Promise<ChartResponse> => {
-  const response = await api.get("/analytics/charts/visitor-trend");
+
+  const response = await api.get(
+    "/api/analytics/charts/visitor-trend"
+  );
+
   return response.data;
 };
 
@@ -19,7 +23,11 @@ export const getVisitorTrend = async (): Promise<ChartResponse> => {
 // ==========================================================
 
 export const getDeviceTypes = async (): Promise<ChartResponse> => {
-  const response = await api.get("/analytics/charts/device-types");
+
+  const response = await api.get(
+    "/api/analytics/charts/device-types"
+  );
+
   return response.data;
 };
 
@@ -28,7 +36,11 @@ export const getDeviceTypes = async (): Promise<ChartResponse> => {
 // ==========================================================
 
 export const getBrowserUsage = async (): Promise<ChartResponse> => {
-  const response = await api.get("/analytics/charts/browser-usage");
+
+  const response = await api.get(
+    "/api/analytics/charts/browser-usage"
+  );
+
   return response.data;
 };
 
@@ -37,7 +49,11 @@ export const getBrowserUsage = async (): Promise<ChartResponse> => {
 // ==========================================================
 
 export const getCountryStatistics = async (): Promise<ChartResponse> => {
-  const response = await api.get("/analytics/charts/countries");
+
+  const response = await api.get(
+    "/api/analytics/charts/countries"
+  );
+
   return response.data;
 };
 
@@ -46,6 +62,10 @@ export const getCountryStatistics = async (): Promise<ChartResponse> => {
 // ==========================================================
 
 export const getTopVisitedPages = async (): Promise<ChartResponse> => {
-  const response = await api.get("/analytics/charts/top-pages");
+
+  const response = await api.get(
+    "/api/analytics/charts/top-pages"
+  );
+
   return response.data;
 };

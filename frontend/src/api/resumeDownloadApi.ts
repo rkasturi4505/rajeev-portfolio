@@ -1,29 +1,31 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+// ==========================================================
+// RESUME DOWNLOAD API
+// ==========================================================
 
-const API_URL = `${API_BASE_URL}/api/resume-downloads`;
+const API_URL = "/api/resume-downloads";
+
+// ==========================================================
+// TRACK RESUME DOWNLOAD
+// PUBLIC
+// ==========================================================
 
 export const trackResumeDownload = async () => {
-  try {
-    const response = await axios.post(API_URL);
 
-    return response.data;
-  } catch (error) {
-    console.error("Resume download tracking failed:", error);
+  const response = await api.post(API_URL);
 
-    throw error;
-  }
+  return response.data;
 };
 
+// ==========================================================
+// GET RESUME DOWNLOADS
+// ADMIN ONLY
+// ==========================================================
+
 export const getResumeDownloads = async () => {
-  try {
-    const response = await axios.get(API_URL);
 
-    return response.data;
-  } catch (error) {
-    console.error("Failed to fetch resume downloads:", error);
+  const response = await api.get(API_URL);
 
-    throw error;
-  }
+  return response.data;
 };

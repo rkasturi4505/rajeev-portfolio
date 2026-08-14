@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,111 +17,206 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+        private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http) throws Exception {
+        @Bean
+        public SecurityFilterChain securityFilterChain(
+                        HttpSecurity http) throws Exception {
 
-        http
+                http
 
-                // =========================================================
-                // CSRF
-                // =========================================================
-                .csrf(csrf -> csrf.disable())
+                                // ==========================================================
+                                // CSRF
+                                // ==========================================================
 
-                // =========================================================
-                // CORS
-                // =========================================================
-                .cors(cors -> {
-                })
+                                .csrf(csrf -> csrf.disable())
 
-                // =========================================================
-                // STATELESS JWT SESSION
-                // =========================================================
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(
-                                SessionCreationPolicy.STATELESS))
+                                // ==========================================================
+                                // CORS
+                                // ==========================================================
 
-                // =========================================================
-                // AUTHORIZATION RULES
-                // =========================================================
-                .authorizeHttpRequests(auth -> auth
+                                .cors(cors -> {
+                                })
 
-                        // =================================================
-                        // PUBLIC ENDPOINTS
-                        // =================================================
-                        .requestMatchers(
+                                // ==========================================================
+                                // STATELESS JWT SESSION
+                                // ==========================================================
 
-                                "/api/auth/**",
+                                .sessionManagement(session -> session.sessionCreationPolicy(
+                                                SessionCreationPolicy.STATELESS))
 
-                                "/api/portfolio/**",
+                                // ==========================================================
+                                // AUTHORIZATION
+                                // ==========================================================
 
-                                "/api/projects/**",
+                                .authorizeHttpRequests(auth -> auth
 
-                                "/api/experience/**",
+                                                // ==================================================
+                                                // PUBLIC AUTHENTICATION
+                                                // ==================================================
 
-                                "/api/education/**",
+                                                .requestMatchers(
+                                                                "/api/auth/**")
+                                                .permitAll()
 
-                                "/api/skills",
+                                                // ==================================================
+                                                // PUBLIC PORTFOLIO APIs
+                                                // ==================================================
 
-                                "/api/resume",
+                                                .requestMatchers(
+                                                                "/api/portfolio/**",
+                                                                "/api/projects/**",
+                                                                "/api/experience/**",
+                                                                "/api/education/**",
+                                                                "/api/skills",
+                                                                "/api/resume",
+                                                                "/api/messages",
+                                                                "/api/ai/chat")
+                                                .permitAll()
 
-                                "/api/messages",
+                                                // ==================================================
+                                                // PUBLIC STATIC RESOURCES
+                                                // ==================================================
 
-                                "/api/analytics/portfolio-view",
+                                                .requestMatchers(
+                                                                "/api/images/**",
+                                                                "/images/**",
+                                                                "/resume/**",
+                                                                "/certificates/**",
+                                                                "/error")
+                                                .permitAll()
 
-                                "/api/analytics/resume-download",
+                                                // ==================================================
+                                                // PUBLIC ANALYTICS TRACKING
+                                                //
+                                                // These are called by PUBLIC visitors.
+                                                // ==================================================
 
-                                "/api/visitor-sessions",
+                                                .requestMatchers(
+                                                                HttpMethod.POST,
+                                                                "/api/analytics/portfolio-view")
+                                                .permitAll()
 
-                                "/api/ai/chat",
+                                                .requestMatchers(
+                                                                HttpMethod.POST,
+                                                                "/api/analytics/resume-download")
+                                                .permitAll()
 
-                                "/api/images/**",
+                                                .requestMatchers(
+                                                                HttpMethod.POST,
+                                                                "/api/portfolio-views")
+                                                .permitAll()
 
-                                "/images/**",
+                                                .requestMatchers(
+                                                                HttpMethod.POST,
+                                                                "/api/resume-downloads")
+                                                .permitAll()
 
-                                "/resume/**",
+                                                .requestMatchers(
+                                                                HttpMethod.POST,
+                                                                "/api/visitor-sessions")
+                                                .permitAll()
 
-                                "/certificates/**",
+                                                // ==================================================
+                                                // ADMIN ANALYTICS
+                                                // ==================================================
 
-                                "/error"
+                                                .requestMatchers(
+                                                                "/api/admin/**")
+                                                .authenticated()
 
-                        ).permitAll()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/analytics/**")
+                                                .authenticated()
 
-                        // =================================================
-                        // PROTECTED ADMIN ENDPOINTS
-                        // =================================================
-                        .requestMatchers(
-                                "/api/admin/**",
-                                "/api/activity-logs/**"
-                        ).authenticated()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/portfolio-views")
+                                                .authenticated()
 
-                        // =================================================
-                        // EVERYTHING ELSE
-                        // =================================================
-                        .anyRequest().authenticated()
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/resume-downloads")
+                                                .authenticated()
 
-                )
+                                                // ==================================================
+                                                // VISITOR SESSIONS
+                                                //
+                                                // Creating a session is public.
+                                                // Reading/searching/deleting is ADMIN ONLY.
+                                                // ==================================================
 
-                // =========================================================
-                // JWT FILTER
-                // =========================================================
-                .addFilterBefore(
-                        jwtAuthenticationFilter,
-                        UsernamePasswordAuthenticationFilter.class);
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/visitor-sessions",
+                                                                "/api/visitor-sessions/**")
+                                                .authenticated()
 
-        return http.build();
-    }
+                                                .requestMatchers(
+                                                                HttpMethod.DELETE,
+                                                                "/api/visitor-sessions/**")
+                                                .authenticated()
 
-    // =============================================================
-    // AUTHENTICATION MANAGER
-    // =============================================================
-    @Bean
-    AuthenticationManager authenticationManager(
-            AuthenticationConfiguration configuration)
-            throws Exception {
+                                                // ==================================================
+                                                // VISITOR ANALYTICS
+                                                // ==================================================
 
-        return configuration.getAuthenticationManager();
-    }
+                                                .requestMatchers(
+                                                                "/api/visitor-sessions/analytics",
+                                                                "/api/visitor-trends/**")
+                                                .authenticated()
+
+                                                // ==================================================
+                                                // ANALYTICS CHARTS
+                                                // ==================================================
+
+                                                .requestMatchers(
+                                                                "/api/analytics/charts/**")
+                                                .authenticated()
+
+                                                // ==================================================
+                                                // ACTIVITY LOGS
+                                                // ==================================================
+
+                                                .requestMatchers(
+                                                                "/api/activity-logs/**")
+                                                .authenticated()
+
+                                                // ==================================================
+                                                // ADMIN / MANAGEMENT APIs
+                                                // ==================================================
+
+                                                .requestMatchers(
+                                                                "/api/admin/**")
+                                                .authenticated()
+
+                                                // ==================================================
+                                                // EVERYTHING ELSE
+                                                // ==================================================
+
+                                                .anyRequest().authenticated())
+
+                                // ==========================================================
+                                // JWT FILTER
+                                // ==========================================================
+
+                                .addFilterBefore(
+                                                jwtAuthenticationFilter,
+                                                UsernamePasswordAuthenticationFilter.class);
+
+                return http.build();
+        }
+
+        // ==============================================================
+        // AUTHENTICATION MANAGER
+        // ==============================================================
+
+        @Bean
+        public AuthenticationManager authenticationManager(
+                        AuthenticationConfiguration configuration)
+                        throws Exception {
+
+                return configuration.getAuthenticationManager();
+        }
 }

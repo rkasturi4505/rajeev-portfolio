@@ -1,48 +1,56 @@
-import axiosInstance from "./axiosInstance";
+import api from "./axiosConfig";
 
-/* ==========================================================
-   ACTIVITY LOG API
-   ========================================================== */
+// ==========================================================
+// ACTIVITY LOG API
+// ==========================================================
 
-/*
- * Activity logs are ADMIN ONLY.
- *
- * axiosInstance automatically attaches:
- *
- * Authorization: Bearer <JWT>
- *
- * from localStorage.
- */
+const API_URL = "/api/activity-logs";
 
-/* ==========================================================
-   LOG NEW ACTIVITY
-========================================================== */
+// ==========================================================
+// LOG NEW ACTIVITY
+// ADMIN ONLY
+// ==========================================================
 
 export const logActivity = async (activity: string) => {
+
   try {
-    const response = await axiosInstance.post("/api/activity-logs", {
+
+    const response = await api.post(API_URL, {
       activity,
     });
 
     return response.data;
+
   } catch (error) {
-    console.error("Failed to log activity:", error);
+
+    console.error(
+      "Failed to log activity:",
+      error
+    );
 
     throw error;
   }
 };
 
-/* ==========================================================
-   GET ALL ACTIVITY LOGS
-========================================================== */
+// ==========================================================
+// GET ALL ACTIVITY LOGS
+// ADMIN ONLY
+// ==========================================================
 
 export const getActivityLogs = async () => {
+
   try {
-    const response = await axiosInstance.get("/api/activity-logs");
+
+    const response = await api.get(API_URL);
 
     return response.data;
+
   } catch (error) {
-    console.error("Failed to fetch activity logs:", error);
+
+    console.error(
+      "Failed to fetch activity logs:",
+      error
+    );
 
     throw error;
   }

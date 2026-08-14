@@ -1,15 +1,25 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const ANALYTICS_API_URL = "/api/analytics";
 
-const ANALYTICS_API_URL = `${API_BASE_URL}/api/analytics`;
-
-const RESUME_DOWNLOAD_API_URL = `${API_BASE_URL}/api/resume-downloads`;
+// ==========================================================
+// TRACK RESUME DOWNLOAD
+// PUBLIC
+// ==========================================================
 
 export const trackResumeDownload = () => {
-  return axios.post(RESUME_DOWNLOAD_API_URL);
+  return api.post(
+    `${ANALYTICS_API_URL}/resume-download`
+  );
 };
 
+// ==========================================================
+// TRACK PORTFOLIO VIEW
+// PUBLIC
+// ==========================================================
+
 export const trackPortfolioView = () => {
-  return axios.post(`${ANALYTICS_API_URL}/portfolio-view`);
+  return api.post(
+    `${ANALYTICS_API_URL}/portfolio-view`
+  );
 };

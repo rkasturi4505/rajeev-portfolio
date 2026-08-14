@@ -1,29 +1,31 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+// ==========================================================
+// PORTFOLIO VIEW API
+// ==========================================================
 
-const API_URL = `${API_BASE_URL}/api/portfolio-views`;
+const API_URL = "/api/portfolio-views";
+
+// ==========================================================
+// TRACK PORTFOLIO VIEW
+// PUBLIC
+// ==========================================================
 
 export const trackPortfolioView = async () => {
-  try {
-    const response = await axios.post(API_URL);
 
-    return response.data;
-  } catch (error) {
-    console.error("Portfolio view tracking failed:", error);
+  const response = await api.post(API_URL);
 
-    throw error;
-  }
+  return response.data;
 };
 
+// ==========================================================
+// GET PORTFOLIO VIEWS
+// ADMIN ONLY
+// ==========================================================
+
 export const getPortfolioViews = async () => {
-  try {
-    const response = await axios.get(API_URL);
 
-    return response.data;
-  } catch (error) {
-    console.error("Failed to fetch portfolio views:", error);
+  const response = await api.get(API_URL);
 
-    throw error;
-  }
+  return response.data;
 };

@@ -1,17 +1,30 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const API_URL = "/api/visitor-trends";
 
-const API_URL = `${API_BASE_URL}/api/visitor-trends`;
+// ==========================================================
+// LAST 7 DAYS
+// ADMIN ONLY
+// ==========================================================
 
 export const getLast7DaysTrend = () => {
-  return axios.get(`${API_URL}/last7days`);
+  return api.get(`${API_URL}/last7days`);
 };
+
+// ==========================================================
+// LAST 30 DAYS
+// ADMIN ONLY
+// ==========================================================
 
 export const getLast30DaysTrend = () => {
-  return axios.get(`${API_URL}/last30days`);
+  return api.get(`${API_URL}/last30days`);
 };
 
+// ==========================================================
+// MONTHLY
+// ADMIN ONLY
+// ==========================================================
+
 export const getMonthlyTrend = () => {
-  return axios.get(`${API_URL}/monthly`);
+  return api.get(`${API_URL}/monthly`);
 };

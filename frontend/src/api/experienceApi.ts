@@ -1,34 +1,39 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const API_URL = "/api";
 
-const API_URL = `${API_BASE_URL}/api`;
+// ==========================================================
+// GET EXPERIENCES
+// PUBLIC
+// ==========================================================
 
-const getAuthHeaders = () => {
-  const token = localStorage.getItem("token");
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
+export const getExperiences = () => {
+  return api.get(`${API_URL}/experience`);
 };
 
-/* ===========================
-   PUBLIC API
-=========================== */
+// ==========================================================
+// ADD EXPERIENCE
+// ADMIN
+// ==========================================================
 
-export const getExperiences = () => axios.get(`${API_URL}/experience`);
+export const addExperience = (experience: any) => {
+  return api.post(`${API_URL}/admin/experience`, experience);
+};
 
-/* ===========================
-   ADMIN API
-=========================== */
+// ==========================================================
+// UPDATE EXPERIENCE
+// ADMIN
+// ==========================================================
 
-export const addExperience = (experience: any) =>
-  axios.post(`${API_URL}/admin/experience`, experience, getAuthHeaders());
+export const updateExperience = (id: number, experience: any) => {
+  return api.put(`${API_URL}/admin/experience/${id}`, experience);
+};
 
-export const updateExperience = (id: number, experience: any) =>
-  axios.put(`${API_URL}/admin/experience/${id}`, experience, getAuthHeaders());
+// ==========================================================
+// DELETE EXPERIENCE
+// ADMIN
+// ==========================================================
 
-export const deleteExperience = (id: number) =>
-  axios.delete(`${API_URL}/admin/experience/${id}`, getAuthHeaders());
+export const deleteExperience = (id: number) => {
+  return api.delete(`${API_URL}/admin/experience/${id}`);
+};

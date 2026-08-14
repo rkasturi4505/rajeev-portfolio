@@ -1,35 +1,48 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const API_URL = "/api/resume";
 
-const API_URL = `${API_BASE_URL}/api/resume`;
+// ==========================================================
+// GET ALL RESUMES
+// ==========================================================
 
-const getAuthHeaders = () => {
-  const token = localStorage.getItem("token");
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
+export const getResumes = () => {
+  return api.get(API_URL);
 };
 
-export const getResumes = () => axios.get(API_URL);
+// ==========================================================
+// GET RESUME BY ID
+// ==========================================================
 
-export const getResumeById = (id: number) => axios.get(`${API_URL}/${id}`);
+export const getResumeById = (id: number) => {
+  return api.get(`${API_URL}/${id}`);
+};
 
-export const uploadResume = (file: File) => {
+// ==========================================================
+// UPLOAD RESUME
+// Accepts File directly from ResumeManagement.tsx
+// ==========================================================
+
+export const uploadResume = async (file: File) => {
   const formData = new FormData();
 
   formData.append("file", file);
 
-  return axios.post(`${API_URL}/upload`, formData, {
+  const response = await api.post(`${API_URL}/upload`, formData, {
     headers: {
-      ...getAuthHeaders().headers,
       "Content-Type": "multipart/form-data",
     },
   });
+
+  return response.data;
 };
 
-export const deleteResume = (id: number) =>
-  axios.delete(`${API_URL}/${id}`, getAuthHeaders());
+// ==========================================================
+// DELETE RESUME
+// ADMIN ONLY
+// JWT is automatically attached by axiosConfig
+// ==========================================================
+
+export const deleteResume = (id: number) => {
+  return api.delete(`${API_URL}/${id}`);
+};

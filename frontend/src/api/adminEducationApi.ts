@@ -1,31 +1,39 @@
-import axios from "axios";
+import api from "./axiosConfig";
 
-import { API_BASE_URL } from "../config/apiConfig";
+const API_URL = "/api/education";
 
-const API_URL = `${API_BASE_URL}/api/education`;
-
-const getAuthHeaders = () => {
-  const token = localStorage.getItem("token");
-
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-};
+// ==========================================================
+// GET EDUCATION
+// ADMIN
+// ==========================================================
 
 export const getEducation = () => {
-  return axios.get(API_URL);
+  return api.get(API_URL);
 };
+
+// ==========================================================
+// ADD EDUCATION
+// ADMIN
+// ==========================================================
 
 export const addEducation = (education: any) => {
-  return axios.post(API_URL, education, getAuthHeaders());
+  return api.post(API_URL, education);
 };
+
+// ==========================================================
+// UPDATE EDUCATION
+// ADMIN
+// ==========================================================
 
 export const updateEducation = (id: number, education: any) => {
-  return axios.put(`${API_URL}/${id}`, education, getAuthHeaders());
+  return api.put(`${API_URL}/${id}`, education);
 };
 
+// ==========================================================
+// DELETE EDUCATION
+// ADMIN
+// ==========================================================
+
 export const deleteEducation = (id: number) => {
-  return axios.delete(`${API_URL}/${id}`, getAuthHeaders());
+  return api.delete(`${API_URL}/${id}`);
 };
