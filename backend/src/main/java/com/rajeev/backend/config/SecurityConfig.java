@@ -8,10 +8,8 @@ import org.springframework.context.annotation.Configuration;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -19,95 +17,111 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-        private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-        @Bean
-        public SecurityFilterChain securityFilterChain(
-                        HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain securityFilterChain(
+            HttpSecurity http) throws Exception {
 
-                http
+        http
 
-                                .csrf(csrf -> csrf.disable())
+                // =========================================================
+                // CSRF
+                // =========================================================
+                .csrf(csrf -> csrf.disable())
 
-                                .cors(cors -> {
-                                })
+                // =========================================================
+                // CORS
+                // =========================================================
+                .cors(cors -> {
+                })
 
-                                .sessionManagement(session -> session.sessionCreationPolicy(
-                                                SessionCreationPolicy.STATELESS))
+                // =========================================================
+                // STATELESS JWT SESSION
+                // =========================================================
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(
+                                SessionCreationPolicy.STATELESS))
 
-                                .authorizeHttpRequests(auth -> auth
+                // =========================================================
+                // AUTHORIZATION RULES
+                // =========================================================
+                .authorizeHttpRequests(auth -> auth
 
-                                                // ============================
-                                                // PUBLIC ENDPOINTS
-                                                // ============================
-                                                .requestMatchers(
+                        // =================================================
+                        // PUBLIC ENDPOINTS
+                        // =================================================
+                        .requestMatchers(
 
-                                                                "/api/auth/**",
+                                "/api/auth/**",
 
-                                                                "/api/portfolio/**",
+                                "/api/portfolio/**",
 
-                                                                "/api/projects/**",
+                                "/api/projects/**",
 
-                                                                "/api/experience/**",
+                                "/api/experience/**",
 
-                                                                "/api/education/**",
+                                "/api/education/**",
 
-                                                                // Added for public portfolio access
-                                                                "/api/skills",
+                                "/api/skills",
 
-                                                                // Added for public resume access
-                                                                "/api/resume",
+                                "/api/resume",
 
-                                                                "/api/messages",
+                                "/api/messages",
 
-                                                                "/api/analytics/portfolio-view",
+                                "/api/analytics/portfolio-view",
 
-                                                                "/api/analytics/resume-download",
+                                "/api/analytics/resume-download",
 
-                                                                "/api/visitor-sessions",
+                                "/api/visitor-sessions",
 
-                                                                "/api/ai/chat",
+                                "/api/ai/chat",
 
-                                                                "/api/images/**",
+                                "/api/images/**",
 
-                                                                "/images/**",
+                                "/images/**",
 
-                                                                "/resume/**",
+                                "/resume/**",
 
-                                                                "/certificates/**",
+                                "/certificates/**",
 
-                                                                "/error"
+                                "/error"
 
-                                                ).permitAll()
+                        ).permitAll()
 
-                                                // ============================
-                                                // ADMIN ENDPOINTS
-                                                // ============================
-                                                .requestMatchers("/api/admin/**")
-                                                .authenticated()
+                        // =================================================
+                        // PROTECTED ADMIN ENDPOINTS
+                        // =================================================
+                        .requestMatchers(
+                                "/api/admin/**",
+                                "/api/activity-logs/**"
+                        ).authenticated()
 
-                                                // ============================
-                                                // EVERYTHING ELSE
-                                                // ============================
-                                                .anyRequest()
-                                                .authenticated()
+                        // =================================================
+                        // EVERYTHING ELSE
+                        // =================================================
+                        .anyRequest().authenticated()
 
-                                )
+                )
 
-                                .addFilterBefore(
-                                                jwtAuthenticationFilter,
-                                                UsernamePasswordAuthenticationFilter.class);
+                // =========================================================
+                // JWT FILTER
+                // =========================================================
+                .addFilterBefore(
+                        jwtAuthenticationFilter,
+                        UsernamePasswordAuthenticationFilter.class);
 
-                return http.build();
+        return http.build();
+    }
 
-        }
+    // =============================================================
+    // AUTHENTICATION MANAGER
+    // =============================================================
+    @Bean
+    AuthenticationManager authenticationManager(
+            AuthenticationConfiguration configuration)
+            throws Exception {
 
-        @Bean
-        AuthenticationManager authenticationManager(
-                        AuthenticationConfiguration configuration) throws Exception {
-
-                return configuration.getAuthenticationManager();
-
-        }
-
+        return configuration.getAuthenticationManager();
+    }
 }

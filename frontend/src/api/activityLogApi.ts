@@ -1,8 +1,18 @@
-import axios from "axios";
+import axiosInstance from "./axiosInstance";
 
-import { API_BASE_URL } from "../config/apiConfig";
+/* ==========================================================
+   ACTIVITY LOG API
+   ========================================================== */
 
-const API_URL = `${API_BASE_URL}/api/activity-logs`;
+/*
+ * Activity logs are ADMIN ONLY.
+ *
+ * axiosInstance automatically attaches:
+ *
+ * Authorization: Bearer <JWT>
+ *
+ * from localStorage.
+ */
 
 /* ==========================================================
    LOG NEW ACTIVITY
@@ -10,7 +20,7 @@ const API_URL = `${API_BASE_URL}/api/activity-logs`;
 
 export const logActivity = async (activity: string) => {
   try {
-    const response = await axios.post(API_URL, {
+    const response = await axiosInstance.post("/api/activity-logs", {
       activity,
     });
 
@@ -28,7 +38,7 @@ export const logActivity = async (activity: string) => {
 
 export const getActivityLogs = async () => {
   try {
-    const response = await axios.get(API_URL);
+    const response = await axiosInstance.get("/api/activity-logs");
 
     return response.data;
   } catch (error) {
