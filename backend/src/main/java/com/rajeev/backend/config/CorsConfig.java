@@ -17,7 +17,9 @@ public class CorsConfig {
         configuration.setAllowedOrigins(
                 List.of(
                         "http://localhost:5173",
-                        "https://rajeev-kumar-portfolio-omega.vercel.app"
+                        "https://rajeev-kumar-portfolio-omega.vercel.app",
+                        "https://rajeevkumarkasturi.com",
+                        "https://www.rajeevkumarkasturi.com"
                 )
         );
 
