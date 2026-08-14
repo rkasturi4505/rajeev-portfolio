@@ -7,6 +7,8 @@ import com.rajeev.backend.model.Experience;
 import com.rajeev.backend.model.Portfolio;
 import com.rajeev.backend.model.Profile;
 import com.rajeev.backend.model.Project;
+import com.rajeev.backend.repository.EducationRepository;
+import com.rajeev.backend.repository.SkillRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,17 @@ import java.util.List;
 
 @Service
 public class PortfolioDataService {
+
+        private final SkillRepository skillRepository;
+        private final EducationRepository educationRepository;
+
+        public PortfolioDataService(
+                        SkillRepository skillRepository,
+                        EducationRepository educationRepository) {
+
+                this.skillRepository = skillRepository;
+                this.educationRepository = educationRepository;
+        }
 
         /**
          * =========================================================
@@ -229,6 +242,33 @@ public class PortfolioDataService {
 
                 /*
                  * =====================================================
+                 * LOAD PERSISTED SKILLS
+                 * =====================================================
+                 *
+                 * IMPORTANT:
+                 * Previously, new SkillEntity(...) objects were created
+                 * here. Because those objects were not persisted, their
+                 * generated database IDs were null.
+                 *
+                 * We now load the actual records from MySQL so the
+                 * response contains their real database IDs.
+                 */
+                List<SkillEntity> skills =
+                                skillRepository.findAllByOrderByDisplayOrderAsc();
+
+                /*
+                 * =====================================================
+                 * LOAD PERSISTED EDUCATION
+                 * =====================================================
+                 *
+                 * Load education directly from the database so the
+                 * generated IDs are included in the API response.
+                 */
+                List<EducationEntity> education =
+                                educationRepository.findAll();
+
+                /*
+                 * =====================================================
                  * PROFILE
                  * =====================================================
                  */
@@ -254,50 +294,10 @@ public class PortfolioDataService {
 
                                 /*
                                  * Skills
+                                 *
+                                 * Loaded from the database.
                                  */
-                                Arrays.asList(
-
-                                                new SkillEntity(
-                                                                "Java",
-                                                                "Advanced",
-                                                                1),
-
-                                                new SkillEntity(
-                                                                "Spring Boot",
-                                                                "Advanced",
-                                                                2),
-
-                                                new SkillEntity(
-                                                                "Microservices",
-                                                                "Advanced",
-                                                                3),
-
-                                                new SkillEntity(
-                                                                "REST APIs",
-                                                                "Advanced",
-                                                                4),
-
-                                                new SkillEntity(
-                                                                "Docker",
-                                                                "Intermediate",
-                                                                5),
-
-                                                new SkillEntity(
-                                                                "Kubernetes",
-                                                                "Intermediate",
-                                                                6),
-
-                                                new SkillEntity(
-                                                                "AWS",
-                                                                "Intermediate",
-                                                                7),
-
-                                                new SkillEntity(
-                                                                "Azure",
-                                                                "Intermediate",
-                                                                8)
-
-                                ),
+                                skills,
 
                                 /*
                                  * =================================================
@@ -457,16 +457,10 @@ public class PortfolioDataService {
                                  * =================================================
                                  * EDUCATION
                                  * =================================================
+                                 *
+                                 * Loaded from the database.
                                  */
-                                Arrays.asList(
-
-                                                new EducationEntity(
-                                                                "B.Tech",
-                                                                "JNTU University Kakinada",
-                                                                "Information Technology",
-                                                                "2010 - 2014")
-
-                                )
+                                education
 
                 );
 
@@ -493,6 +487,14 @@ public class PortfolioDataService {
                 System.out.println(
                                 "PORTFOLIO PROJECT COUNT = "
                                                 + portfolio.getProjects().size());
+
+                System.out.println(
+                                "PORTFOLIO SKILL COUNT = "
+                                                + skills.size());
+
+                System.out.println(
+                                "PORTFOLIO EDUCATION COUNT = "
+                                                + education.size());
 
                 return portfolio;
         }
