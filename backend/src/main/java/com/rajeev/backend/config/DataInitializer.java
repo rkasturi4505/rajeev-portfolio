@@ -30,15 +30,18 @@ public class DataInitializer {
 
         return args -> {
 
-            if (userRepository.findByUsername(username).isEmpty()) {
+            User admin = userRepository.findByUsername(username)
+                    .orElse(null);
 
-              User admin = new User();
+            if (admin == null) {
 
-            admin.setUsername(username);
-            admin.setEmail(email);
-            admin.setPassword(passwordEncoder.encode(password));
-            admin.setRole("ADMIN");
-            admin.setEnabled(true);
+                admin = new User();
+
+                admin.setUsername(username);
+                admin.setEmail(email);
+                admin.setPassword(passwordEncoder.encode(password));
+                admin.setRole(role);
+                admin.setEnabled(true);
 
                 userRepository.save(admin);
 
@@ -50,13 +53,32 @@ public class DataInitializer {
 
             } else {
 
-                System.out.println("========================================");
                 System.out.println("Admin user already exists");
-                System.out.println("Username : " + username);
-                System.out.println("========================================");
 
+                /*
+                 * Update password from ADMIN_PASSWORD.
+                 * This allows the Render environment variable
+                 * to control the admin password.
+                 */
+                if (!passwordEncoder.matches(password, admin.getPassword())) {
+
+                    admin.setPassword(passwordEncoder.encode(password));
+                    admin.setEmail(email);
+                    admin.setRole(role);
+                    admin.setEnabled(true);
+
+                    userRepository.save(admin);
+
+                    System.out.println("========================================");
+                    System.out.println("Admin password updated successfully");
+                    System.out.println("Username : " + username);
+                    System.out.println("========================================");
+
+                } else {
+
+                    System.out.println("Admin password is already up to date");
+                }
             }
-
         };
     }
 }
